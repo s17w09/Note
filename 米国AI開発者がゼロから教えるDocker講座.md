@@ -15,9 +15,60 @@
 - MacはUnixベースのOS ＝　LinuxはUnixを元に作られている　＝　なのでLinuxコマンドを学ぶ必要ある
 
 ##### シェルとは？
+- bash,zsh,sh...人によって使っているものは違う
 - ほんとはKernel（核）に命令出したいけど出せないので、Shell（殻）に命令出している
 - ターミナルはシェルではない、シェルを動かすアプリがターミナル
 - シェルがカーネルに命令出してくれている
 
 ##### 環境変数とは？
-- 
+- シェルの情報も環境変数に入っている
+-  「% echo $SHELL」　で見れる　→/bin/zsh　　←zshというシェルが、binのフォルダに入っていて、ここにzshのプログラムが入っているということ
+-  環境変数作る時は「% export AGE=20」 、echo $AGEをすると、20が返ってくる
+-  echoやexportというコマンドを使って、カーネルに命令を出している（直接カーネルに命令を出すのではなく
+-  シェルというアプリを使って命令を出している）
+
+##### Linuxの基礎コマンド
+- pwd :今いるディレクトリを表示
+- touch<newfile>：新しいファイルを作成、アクセス権があるかどうかがすぐわかる
+- rm<file>：ファイルを削除
+- rm　-r<folder>:フォルダを削除
+
+#### 準備編
+***
+- Dockerhub：　Dockerイメージを管理するDockerレジストリ
+- Dockerイメージを誰かに渡して、コンテナの情報を共有する
+- Dockerhubにはいろんな人のDockerイメージああり、それを使ったり、逆に自分のイメージを共有することができる
+
+#### Dockerを使ってみる
+- AさんとBさんが共同で作業する時、テスト環境・開発環境・本番環境など、すべて同じ挙動する環境を作る必要ある、だが実際は使っているOSなど違うので、全く同じものを作るのが難しい　→それを解決してくれるのがDocker
+- 同じコンテナを使えば、同じ挙動をするものを使える
+- Dockerのコンテナ：　Dockerイメージから作られている、逆で持つくれる（DockerイメージからDockerコンテナを作る）
+- Dockerイメージ：　Dockerファイルから作られる、Dockerファイルはただのテキストファイル
+- Dockerイメージから、複数のコンテナを作ることもできる
+- DockerhubにはDockerイメージが複数ある、そこからホスト（自分のPC）上へDocekrイメージを持ってきてコンテナを作る
+
+  #### Dockerhubからhello-worldをpullする
+  - pull ：　Dockerhubからホストへ持っていくこと
+  - docker loginはDockerを立ち上げないと入れない
+    
+```
+docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+478afc919002: Pull complete 
+Digest: sha256:6352af1ab4ba4b138648f8ee88e63331aae519946d3b67dae50c313c6fc8200f
+Status: Downloaded newer image for hello-world:latest
+docker.io/library/hello-world:latest
+% docker images
+REPOSITORY                           TAG       IMAGE ID       CREATED         SIZE
+bugfix_app-master-web                latest    54cc0f305257   6 days ago      1.23GB
+44708_s17w09_basic_rails_basic-web   latest    f5c1adf51db8   3 weeks ago     1.42GB
+<none>                               <none>    83b6548a8c27   3 weeks ago     1.42GB
+seleniarm/standalone-chromium        latest    aab303213c3e   6 weeks ago     1.58GB
+mysql                                5.7       5107333e08a8   3 months ago    501MB
+hello-world                          latest    ee301c921b8a   10 months ago   9.14kB
+```
+- Docker imagesでホストの中にあるDockerイメージが見える
+- hello-worldはリポジトリ名、library/hello-worldから取ってきた
+- tag:バージョンのこと、指定しなければ最新のものがとってこられる
+- https://hub.docker.com/u/library ：Dockerhubのライブラリ、一つのリポジトリに対して一つのDockerイメージ、そのDockerイメージに対して複数のバージョン（＝tag）が保存されている
