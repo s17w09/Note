@@ -72,3 +72,56 @@ hello-world                          latest    ee301c921b8a   10 months ago   9.
 - hello-worldはリポジトリ名、library/hello-worldから取ってきた
 - tag:バージョンのこと、指定しなければ最新のものがとってこられる
 - https://hub.docker.com/u/library ：Dockerhubのライブラリ、一つのリポジトリに対して一つのDockerイメージ、そのDockerイメージに対して複数のバージョン（＝tag）が保存されている
+
+#### hello-worldのコンテナを作る
+- DockerImageからコンテナを作る
+- Docker psでコンテナイ一覧を見れる
+- DOcker
+```
+   % docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+- Docker psはアクティブな状態のコンテナしか見れない、Docker ps ーaですべてのコンテナが見れる
+```
+sayamiwatanabe@MacBook-Pro-de-watanabesoukai ~ % docker ps 
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+sayamiwatanabe@MacBook-Pro-de-watanabesoukai ~ % docker ps -a
+CONTAINER ID   IMAGE                                  COMMAND                   CREATED          STATUS                      PORTS     NAMES
+9d536aa66af6   hello-world                            "/hello"                  49 seconds ago   Exited (0) 48 seconds ago             peaceful_lewin
+```
+- status exite :何かプログラムを動かすと、すぐコンテナから抜けるというイメージ
+- 例えば、テスト環境など（テスト環境は常に必要なわけではない、コード修正しテストが必要になった時に、Dockerイメージからコンテナを作成、終わるとexitされる）
+
+#### UbuntuのDockerImageをrunする
+- Ubuntu :Linuxから派生したOS
+- docker run it ubuntu bash：　it→bash起動時に必要なイプション
+- bash→コンテナ起動時に実行するプログラム
+#### Ubuntuののコンテナを更新する
+#### コンテナをresetwして再度コンテナを起動する
+#### コンテナをcommitして更新内容をDockerImageにする
+#### DockerHubにリポジトリを作成する
+#### DockerImageを別名で保存する
+#### DockerHuBにDockerImageをpushする
+#### pushしたDockerImageをpullする
+#### まとめ
+
