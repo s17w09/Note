@@ -1,4 +1,6 @@
-### Next.jsとは　：　概要
+## Next.js
+
+### 概要
 - Javascriptのフレームワーク、Reactをベースに開発されたフロントエンドのフレームワーク
 - 「URLルーティング」と呼ばれるリクエストされたURLに対して呼び出すアクションを決定する仕組みや、Webアプリ開発を効率よくするための機能が多く含まれている
 
@@ -17,8 +19,36 @@
 - ③ゼロコンフィグ機能がある
 - 最低限の設定を自動で行ってくれるため、開発対象となるプロジェクトに合わせたパッケージのインストールと、簡易的な設定を行うだけで動作する。
 
-### Next.jsの基本操作
-- Next.jsを使用するためには、Node.js（npm）を事前にインストールしておく必要があります
-- 
-- 参考記事：[Next.jsとは？Reactとの違いやインストール・基本操作を解説！
-](https://udemy.benesse.co.jp/development/app/what-is-next-js.html)
+### 環境構築
+- Next.jsを使用するためには、Node.js、npmのインストールが必要
+- Node.js、npmのインストール（インストール方法は下記参照URLより）
+- open AIのモジュールをインストールのインストール[【初心者向け】Next.jsの環境構築【Next.jsでchatGPTのAPIを動かす/第2回】](https://dev-diary-bits.com/nextjs-chatgpt-api-2/)
+- ターミナルで、```npm run dev```コマンドを打つ←開発モードで実行するコマンド
+- 実際に完成品を動かす際には、```npm run build```→```npm run start```という順番で動かす
+- npm run devの場合、プログラムの変更をリアルタイムで反映してくれる
+-　エラーが出た時も瞬時に反映！ [![Image from Gyazo](https://i.gyazo.com/7b0acce68a395be55171f5cd3a34074a.png)](https://gyazo.com/7b0acce68a395be55171f5cd3a34074a)
+
+### Node.jsについて
+- Node.js：　バックエンド側でもjavascriptを使えるようしたよ！という実行環境のこと
+- JavaScriptは元々ブラウザ上で動くプログラム言語だが, Node.jsは自身のPCやサーバサイドでJavaScriptを動かすことができる
+- Node.jsは大規模で高速なネットワークを構築するコンセプトの元で開発された。
+- Node.jsなら小規模のデータや計算ならば高速に処理できて, メモリの消費量も抑えらえる。
+
+### npmについて
+- npm: Node Package Managerの略
+- Node.jsのパッケージ管理ツール
+
+
+
+
+
+
+
+
+  
+- 参考記事
+- [Next.jsとは？Reactとの違いやインストール・基本操作を解説！](https://udemy.benesse.co.jp/development/app/what-is-next-js.html)
+- [【初心者向け】Node.jsの環境構築【Next.jsでchatGPTのAPIを動かす/第1回】](https://dev-diary-bits.com/nextjs-chatgpt-api-1/)
+- [Node.jsをインストールする](https://qiita.com/sefoo0104/items/0653c935ea4a4db9dc2b)
+- [Node.jsとはなにか？なぜみんな使っているのか？](https://qiita.com/non_cal/items/a8fee0b7ad96e67713eb)
+
