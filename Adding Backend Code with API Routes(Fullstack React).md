@@ -6,4 +6,16 @@
   https://tech.012grp.co.jp/entry/rest_api_basics
   https://www.redhat.com/ja/topics/api/what-is-a-rest-api
 
-- pages>api>~：　〜のファイル名は勝手に命名していいが、apiは固定。（apiフォルダはnext.jsに認識されるため）
+- pages>api>~：　〜のファイル名は勝手に命名していいが、apiは固定。（apiフォルダはnext.jsに認識される特別なファイルのため）
+- pages>api>feedback.jsの場合、URLはlocalhost:3000/api/feedbackになる
+- apiフォルダ以外ではreactコンポーネント、export default使ええるが、api routes内ではreactコンポーネントは使えない
+- だが、api routes内では下記のように書け、またserver side codeはなんでもかける
+- リクエストを扱うのでhandler、handlerは2つのパラメーターを持つ、request objectとrespond object
+```
+function handler(req,res) {
+  res.status(200).jason({ message: 'This works!'});
+}
+
+export default handler;
+```
+- これはJavaScriptの機能
