@@ -48,3 +48,87 @@
 
 ⑤色々なコミット
 - 削除したファイルをコミットする：　「rm　　ファイル名」　で削除後、　　「git rm ファイル名」でステージングエリアへ追加できる
+
+⑥現在の状況の確認
+- git statusで確認、きちんとターミナルの文言も確認してみる
+
+⑦変更履歴の確認
+- git logコマンドではリポジトリにコミットされたログを確認する
+- git logではコミットも表示されるが、打ち消したいとかリポジトリを戻したいときにはこのハッシュ値を指定する
+```
+git log
+commit 461bee3b63a164f9cb4d61fd49d36d8cd077f7fe (HEAD -> master, origin/master, origin/HEAD, origin/04_add_state_to_article, 04_add_state_to_article)
+Author: s17w09 <s0917.smys04@gmail.com>
+Date:   Wed Apr 17 15:33:31 2024 +0900
+
+    記事ステータスの追加
+
+commit 584ac2ee33d7603f945496fff5a705ac286a6363
+```
+
+- git log --oneline： 1行で何が変更されたのかわかる
+- git log -p ファイル名　：ファイル差分を確認できる
+- git log -n 3：　最新のコミットの3つだけ表示できる、　git log --oneline -n 3とすると、最新のコミット３つを1行ずつで端的にみることができる
+```
+
+sayamiwatanabe@MacBook-Pro-de-watanabesoukai 44572_s17w09_runteq_curriculum_advanced % git log --oneline
+461bee3 (HEAD -> master, origin/master, origin/HEAD, origin/04_add_state_to_article, 04_add_state_to_article) 記事ステータスの追加
+584ac2e 記事ステータスの追加
+ebb1c2f 記事ステータスの追加
+197a04d 記事ステータスの追加
+cf11d2e 記事ステータスの追加
+e077d11 (origin/03_bug_on_insert_text, 03_bug_on_insert_text) テキスト挿入時のバグ修正
+df4f744 テキスト挿入時のバグ修正
+00f2cb8 (origin/02_breadcrumb, 02_breadcrumb) パンくずの設定
+c2bb4d6 (origin/01_bug_on_preview_image, 01_bug_on_preview_image) 画像挿入時のバグ修正
+4663b30 initial commit
+sayamiwatanabe@MacBook-Pro-de-watanabesoukai 44572_s17w09_runteq_curriculum_advanced %
+```
+
+⑧変更差分を確認
+- git diff：ファイルの変更差分を表示する（diffはdifferenceの略）、add・コミットする前に確認
+- git diffでは、今の自分のローカルとステージング領域の差分を表示するコマンド
+- git diff --HEAD：ステージング領域と、最新コミットの差分を見られる
+
+⑨Githubにプッシュする
+- リモートリポジトリ＝　githubのことを指す
+- プッシュするにあたり、ローカルリポジトリにリモートリポジトリを登録する必要がある
+→ git remote add origin https://github.com/user/repo.git
+- git push コマンドで、ローカルからリモートリポジトリへ内容を送信できる
+
+⑩Githubの画面を確認
+- Code内で、他の誰かにファイルの行数を指定して送りたいときには、その行をクリックすればその行のURLが生成される
+[![Image from Gyazo](https://i.gyazo.com/a666db7f5489d00600a9d2022f6ae300.png)](https://gyazo.com/a666db7f5489d00600a9d2022f6ae300)
+
+11. バージョン管理したくないファイルをGitの管理から外す
+- .gitignoreファイルで指定することで、ファイルをgitの管理から外すことができる
+例）　自動生成されるファイル、パスワードが記載されているファイル
+[.gitignoreを使ってみた](https://qiita.com/kohki_takatama/items/7e122c9c99b95f2bdef8)
+- パスワード記載あるファイルは、自分のローカルやサーバー上などの安全な場所で管理する
+```
+# .ignoring files
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# next.js
+/.next/
+/out/
+
+# local env files
+.env*.local
+```
+
+- 指定したファイルを除外：ファイル名を書く
+- ルートディレクトリを指定して除外: /root.html
+- ディレクトリ以下を全て除外：　dir/
+
+- .gitignoreファイルに書き忘れて間違ってコミットしてしまった場合の、Gitからの管理の外し方
+→ git rm　 --cachedコマンドで、ローカルにファイルは残しておき、Gitの管理からは外すということができる
+ただし、.gitignoreファイルに除外するファイル名は記載する
+
+### 4, まとめ
+[よく使うコマンド集](file:///Users/sayamiwatanabe/Downloads/Git.pdf)
