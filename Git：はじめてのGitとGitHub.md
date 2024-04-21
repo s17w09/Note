@@ -132,3 +132,4 @@ sayamiwatanabe@MacBook-Pro-de-watanabesoukai 44572_s17w09_runteq_curriculum_adva
 
 ### 4, まとめ
 [よく使うコマンド集](file:///Users/sayamiwatanabe/Downloads/Git.pdf)
+[Gitまとめサイト](https://www.atlassian.com/ja/git/tutorials/atlassian-git-cheatsheet)
