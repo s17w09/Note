@@ -68,3 +68,14 @@
 
 #### ファイル名の変更を記録する
 - git mv 旧ファイル名　新ファイル名：　ファイル名を変更
+
+
+#### GitHubにプッシュする
+- 新規登録する場合：git remote add origin GithubURL
+- originというショートカットでurlのリモートリポジトリを登録すると、今後はoriginという名前でGitHubリポジトリにアップしたり取得したりする
+- git push origin master：リモートリポジトリへ送信
+- git push -u origin master : -uは、初回につけておくと今後はgit push origin masterだけですむ
+
+#### エイリアスの設定
+- git config --global：PC全体で設定できる
+- git config：設定のこと
