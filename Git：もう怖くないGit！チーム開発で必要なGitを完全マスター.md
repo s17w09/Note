@@ -119,3 +119,20 @@ https://www.atlassian.com/ja/git/tutorials/undoing-changes
 #### リモートから取得する（フェッチ編）
 - git fetch リモート名：ローカルリポジトリに情報を取得する、ワークツリーには情報は反映されない
 - git mergeでワークツリーへ反映する
+
+#### リモートから取得する（プル編）
+- リモ〜とから情報を取得して、一気にマージする
+- git pullでも、git pull origin masterと同じ
+- git pull origin master = git fetch origin master, git merge origin/masterの動作と同じ
+＝　git pullすれば、リモートリポジトリの内容をローカルへ反映させて、ワークツリーにもその変更を一度にできる
+
+#### フェッチとプルの使い分け
+- フェッチが基本使うべき、プルは挙動が特殊
+https://techmania.jp/blog/git0002/
+
+#### リモート情報を詳しく知る
+- git remote show リモート名
+
+#### リモートを変更・削除
+- git remote rename　旧リモート名　新リモート名
+- git remote rm　リモート名
