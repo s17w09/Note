@@ -175,3 +175,18 @@ https://www.atlassian.com/ja/git/tutorials/using-branches/git-merge
 ③pullする時は、pullするブランチに移動してからpullする
 - masterブランチでpullしたいのに、featureブランチのままpull　してしまうと、featureブランチの方にmergeされてしまうため！
 - コンフリクトしても慌てないこと
+
+#### ブランチを変更、削除する
+- git branch -m ブランチ名：今作業しているブランチ名を変更する-m はmove
+- git branch -d：削除する、強制削除は-D
+
+#### ブランチを利用した開発の流れ
+- masterブランチをリリース用ブランチに、開発はトピックブランチを作成して進めるのが基本
+
+#### リモートブランチとは？
+- リモートリポジトリにある、ローカルより進んだブランチがある時、git fetchすると、ローカルにorigin/masterやorigin/featureなど
+  リモートリポジトリの内が反映すること
+- git fetchしてくると、origin/がつくということ
+
+#### GitHubを利用した開発の流れ
+### プルリクエストの流れ
