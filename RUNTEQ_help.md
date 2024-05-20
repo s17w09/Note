@@ -30,3 +30,7 @@ view で form_for 使いたいし、validate も同じように定義したい�
 - delegateメソッド
 
 ◉MVC
+- [中規模Web開発のためのMVC分割とレイヤアーキテクチャ](https://qiita.com/yuku_t/items/961194a5443b618a4cac)
+>レイヤアーキテクチャというのはアプリケーションを責務に応じたいくつかの層としてとらえる設計手法のことです。
+>このとき上の層が下の層を一方的に利用するようにすることで、オブジェクト間の結合を疎に保ちます
+[![Image from Gyazo](https://i.gyazo.com/17a3b357d6354e4e468e526a71cd6f01.png)](https://gyazo.com/17a3b357d6354e4e468e526a71cd6f01)
