@@ -52,8 +52,6 @@
 - DockerhubにはDockerイメージが複数ある、そこからホスト（自分のPC）上へDocekrイメージを持ってきてコンテナを作る
 
 
-5/20ここまで学習
-
 #### Dockerhubからhello-worldをpullする
   - pull ：　Dockerhubからホストへ持っていくこと
   - docker loginはDockerを立ち上げないと入れない
@@ -75,15 +73,17 @@ seleniarm/standalone-chromium        latest    aab303213c3e   6 weeks ago     1.
 mysql                                5.7       5107333e08a8   3 months ago    501MB
 hello-world                          latest    ee301c921b8a   10 months ago   9.14kB
 ```
-- Docker imagesでホストの中にあるDockerイメージが見える
+- Docker imagesコマンドで、ホストの中にあるDockerイメージが見える
 - hello-worldはリポジトリ名、library/hello-worldから取ってきた
 - tag:バージョンのこと、指定しなければ最新のものがとってこられる
 - https://hub.docker.com/u/library ：Dockerhubのライブラリ、一つのリポジトリに対して一つのDockerイメージ、そのDockerイメージに対して複数のバージョン（＝tag）が保存されている
 
 #### hello-worldのコンテナを作る
-- DockerImageからコンテナを作る
-- Docker psでコンテナイ一覧を見れる
-- DOcker
+- docker run <image>：　コンテナを作る
+- docker ps：　アクティブなコンテナ一覧を見れる
+- docker ps　-a ：　すべてのコンテナ一覧を見れる
+
+
 ```
    % docker run hello-world
 
@@ -116,15 +116,31 @@ sayamiwatanabe@MacBook-Pro-de-watanabesoukai ~ % docker ps -a
 CONTAINER ID   IMAGE                                  COMMAND                   CREATED          STATUS                      PORTS     NAMES
 9d536aa66af6   hello-world                            "/hello"                  49 seconds ago   Exited (0) 48 seconds ago             peaceful_lewin
 ```
-- status exite :何かプログラムを動かすと、すぐコンテナから抜けるというイメージ
+- status exited :何かプログラムを動かすと、すぐコンテナから抜けるというイメージ
 - 例えば、テスト環境など（テスト環境は常に必要なわけではない、コード修正しテストが必要になった時に、Dockerイメージからコンテナを作成、終わるとexitされる）
+- コンテナは常に存在することも、動作ごとに呼び出されることもある
+[![Image from Gyazo](https://i.gyazo.com/f5f4674347988b31d8e6bc6e0a8f5ba2.png)](https://gyazo.com/f5f4674347988b31d8e6bc6e0a8f5ba2)
+
 
 #### UbuntuのDockerImageをrunする
 - Ubuntu :Linuxから派生したOS
 - docker run it ubuntu bash：　it→bash起動時に必要なイプション
 - bash→コンテナ起動時に実行するプログラム
+- ubuntuがなければ、ホストからとってくる
+- docker run it ubuntu bashで、ubuntuで作成されたコンテナ内で使用できるbashにアクセスしている
+- Docker imageは、複数のdockerレイヤーで構成されている
+- 新しいimageを作ってsaveする場合には、新しいレイヤーが作成される。既存のレイヤーは変わらない（スペース節約のため）
+
 #### Ubuntuののコンテナを更新する
+- ubuntuはOSのこと
+- docker run it ubuntu bashとすると、ubuntuの中のbashをデフォルトで実行してねと言う意味になる
+- 開発現場では、ubuntuをそのまま更新するよりは、新しいパッケージ等（JavaやPythonなど）を追加して更新することが多い
+
 #### コンテナをresetwして再度コンテナを起動する
+
+ここから
+
+
 #### コンテナをcommitして更新内容をDockerImageにする
 #### DockerHubにリポジトリを作成する
 #### DockerImageを別名で保存する
