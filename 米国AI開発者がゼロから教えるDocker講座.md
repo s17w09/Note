@@ -137,11 +137,13 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - 開発現場では、ubuntuをそのまま更新するよりは、新しいパッケージ等（JavaやPythonなど）を追加して更新することが多い
 
 #### コンテナをresetwして再度コンテナを起動する
-
-ここから
-
+- exitとdetachの違い
+- exitした場合は、up=>exitedに変更している。再起動する場合は、restart選択、その後upとなる
+- detachの場合は、最初からupステータス。再起動したい場合は、docker attachを入力する
+  https://qiita.com/H-Toshi/items/424c22c0d0c69868a71e
 
 #### コンテナをcommitして更新内容をDockerImageにする
+
 #### DockerHubにリポジトリを作成する
 #### DockerImageを別名で保存する
 #### DockerHuBにDockerImageをpushする
