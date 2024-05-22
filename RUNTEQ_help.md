@@ -34,3 +34,14 @@ view で form_for 使いたいし、validate も同じように定義したい�
 >レイヤアーキテクチャというのはアプリケーションを責務に応じたいくつかの層としてとらえる設計手法のことです。
 >このとき上の層が下の層を一方的に利用するようにすることで、オブジェクト間の結合を疎に保ちます
 [![Image from Gyazo](https://i.gyazo.com/17a3b357d6354e4e468e526a71cd6f01.png)](https://gyazo.com/17a3b357d6354e4e468e526a71cd6f01)
+
+- [Webアプリケーション開発者から見た、MVCとMVP、そしてMVVMの違い](https://qiita.com/shinkuFencer/items/f2651073fb71416b6cd7)
+>Railsで語られるMVCと他で語られるMVCのニュアンスが若干違うので
+そこを基点にMVCの違い、そしてMVP、MVVMとは何なのかをまとめてみました。
+- RailsのMVCは理解できたが、他言語のMVC, MVP, MVVMの理解はできていない。だが、Rails以外の時は、知っている単語でもいいが違うということは改めて理解できた。
+
+◉ActiveRecord
+- [【Rails】 マイグレーションファイルを徹底解説！](https://pikawaka.com/rails/migration)
+> railsでデータベースに対して何らかの変更を行いたい場合、全てマイグレーションファイルというファイルを作成・編集して読み込ませることによりテーブルを作成したり、カラムを追加したりします。
+- NoFileと表示されたら：[これみる](https://pikawaka.com/rails/migration#%E9%96%93%E9%81%95%E3%81%A3%E3%81%A6%E5%89%8A%E9%99%A4%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E3%82%89)
+- カラムの型：bigint（かなり大きな整数型を保存したい時）、boolean（true又はfalseを保存したい時）
