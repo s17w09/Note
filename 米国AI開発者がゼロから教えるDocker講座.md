@@ -143,10 +143,21 @@ CONTAINER ID   IMAGE                                  COMMAND                   
   https://qiita.com/H-Toshi/items/424c22c0d0c69868a71e
 
 #### コンテナをcommitして更新内容をDockerImageにする
+- docker restartでコンテナ内に入って、upの状態にしてからcommitする
 
 #### DockerHubにリポジトリを作成する
+- DockerHubには各種リポジトリがあり、その中にDockerImageが格納されている
+- 他の人が作ったリポジトリに、自分の修正したファイルをアップするわけにはいかないので、自分のリポジトリを作成する
+- 基本的には、リポジトリに対し、１つのImageが入る
+- docker imagesコマンドで、image名とtag名がわかる
+  
 #### DockerImageを別名で保存する
+- 別名で保存するコマンドはdcker tagコマンドになる
+- DockerHubではなく、会社が用意している先にファイルを保存する場合には、名前に注意して保存する
+  
 #### DockerHuBにDockerImageをpushする
+- DockerHub上の自分のリポジトリにpushされるのは、変更されたレイヤーのみ。変更かかっていないレイヤーに関しては、別のリポジトリを参照する＝DockerHub上のスペースの節約になる
+
 #### pushしたDockerImageをpullする
 #### まとめ
 
