@@ -45,3 +45,8 @@ view で form_for 使いたいし、validate も同じように定義したい�
 > railsでデータベースに対して何らかの変更を行いたい場合、全てマイグレーションファイルというファイルを作成・編集して読み込ませることによりテーブルを作成したり、カラムを追加したりします。
 - NoFileと表示されたら：[これみる](https://pikawaka.com/rails/migration#%E9%96%93%E9%81%95%E3%81%A3%E3%81%A6%E5%89%8A%E9%99%A4%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E3%82%89)
 - カラムの型：bigint（かなり大きな整数型を保存したい時）、boolean（true又はfalseを保存したい時）
+
+- [Rails 5から導入されたmigration versioingについて
+](https://y-yagi.tumblr.com/post/137935511450/rails-5%E3%81%8B%E3%82%89%E5%B0%8E%E5%85%A5%E3%81%95%E3%82%8C%E3%81%9Fmigration-versioing%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+マイグレーションファイルの一番上に生成される、```class CreateInvitations < ActiveRecord::Migration[5.2]```の[5.2]は、Railsのバージョン。
+今が、v7.1だけど、マイグレーションファイルに古いバージョンで記載ある場合は、その古いバージョンの挙動をそのまま保持できるので、互換性を維持することができる。
