@@ -165,3 +165,19 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - DockerHub：　dockerレジストリの一つ。dockerイメージをイメージを保管している場所
 - docker image: コンテナを作る元のもの
 - docker ps -a : process statusの略、コンテナの一覧を表示できる
+
+
+
+### Dockerの動きをもう少し詳細に理解する
+#### docker runコマンドについて
+- run = create+startの役割を果たしている
+- create ：コンテナを作成する。コンテナを作るだけなので、statusmはcreatedになる
+- start  :createdされたコンテナで、デフォルトコマンドを実行する。statusはupになるはずだが、
+  exited状態になる。（upしてデフォルトコマンドを実行したら、任務終了なのでexitedとなる）
+- docker start -a：　このコマンドで実行すれば、docker runコマンドした時と同じように、デフォルトコマンドの内容見れる
+- ただ、業務ではdocker create, start, start -aを使うことはない
+
+#### コマンドの上書き
+- docker run ubuntuだけだと、コンテナが開かれた状態にはならない
+- docker run -it ubuntuで、コンテナが開かれる
+- docker run <image><command>で、コマンドの上書きができる
