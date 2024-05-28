@@ -50,3 +50,76 @@ view で form_for 使いたいし、validate も同じように定義したい�
 ](https://y-yagi.tumblr.com/post/137935511450/rails-5%E3%81%8B%E3%82%89%E5%B0%8E%E5%85%A5%E3%81%95%E3%82%8C%E3%81%9Fmigration-versioing%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
 マイグレーションファイルの一番上に生成される、```class CreateInvitations < ActiveRecord::Migration[5.2]```の[5.2]は、Railsのバージョン。
 今が、v7.1だけど、マイグレーションファイルに古いバージョンで記載ある場合は、その古いバージョンの挙動をそのまま保持できるので、互換性を維持することができる。
+
+- [Railsバリデーションまとめ](https://qiita.com/h1kita/items/772b81a1cc066e67930e)
+- 「バリデーションがトリガされる」：　データのチェック（バリデーション）が行われるきっかけが発生することを意味する
+
+- numericality：　属性に数値のみが使われていることをバリデーションします。デフォルトでは、整数値または浮動小数点数値にマッチする。https://railsguides.jp/active_record_validations.html#numericality
+- validates_associated：　常に有効でなければならない関連付けがモデルにある場合は、このヘルパーを使う
+  https://railsguides.jp/active_record_validations.html#validates-associated
+- :ifや:unlessでProcを使う：　Procオブジェクトを使うと、個別のメソッドを指定する代わりに、その場で条件を書けるようになります。ワンライナーに収まる条件を使いたい場合に最適です。https://railsguides.jp/active_record_validations.html#if%E3%82%84-unless%E3%81%A7proc%E3%82%92%E4%BD%BF%E3%81%86
+
+
+- [Rails tips: 知らないと損する4つのバリデーションレベル（翻訳）](https://techracho.bpsinc.jp/hachi8833/2021_12_02/55771)
+- コントローラーレベルでのバリデーション：　Form objectパターン
+
+- ロボらんてくん　FormObject解説：
+>OK、RailsのForm Objectについて簡単に説明するゾ！
+
+#### Form Objectとは？
+Form Objectは、複雑なフォームを扱うためのデザインパターンなんダ。通常はActiveRecordモデルのバリデーションやロジックをフォーム専用のクラスに分離することで、コードを整理しやすくする目的があるんダナ。
+
+#### いつ使うのか？
+複数のモデルを一つのフォームで扱いたいとき
+フォームに特定のバリデーションやロジックを追加したいとき
+フォームの再利用性を高めたいとき
+#### 基本的な使い方
+1,  Form Objectクラスを作成
+
+通常のクラスを作成して、ActiveModel::Modelをincludeする。
+```
+class UserForm
+  include ActiveModel::Model
+
+  attr_accessor :name, :email
+
+  validates :name, presence: true
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  def save
+    return false unless valid?
+    # 保存ロジックをここに書く
+  end
+end
+```
+2,  フォームで使用
+
+コントローラーでForm Objectを使ってデータを受け取り、バリデーションや保存を行う。
+```
+class UsersController < ApplicationController
+  def new
+    @user_form = UserForm.new
+  end
+
+  def create
+    @user_form = UserForm.new(user_form_params)
+    if @user_form.save
+      redirect_to success_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def user_form_params
+    params.require(:user_form).permit(:name, :email)
+  end
+end
+```
+
+#### メリット
+コードの整理: モデルの肥大化を防ぎ、フォームに特化したロジックを専用のクラスに分けることができる。
+テストが容易: フォームのバリデーションやロジックを個別にテストしやすくなる。
+これがRailsのForm Objectの基本的な使い方なんダナ。
+
