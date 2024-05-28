@@ -201,3 +201,21 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - コンテナ名を指定していなかった場合は、docker側が一意の任意の名前をつけてくれる
 - docker run --name <コンテナ名><イメージ>：　コンテナに名前をつけることができる
 - コンテナ名は重複して使用することはできず、必ず一意である必要がある
+
+#### detachedモードとforegroundモード
+- docker run -d <image>：　-dがdetachedのこと。コンテナ起動後に、detach（バックグラウンドで動作）する
+- docker run --rm <image>：　コンテナをexit後に削除すること（1回しか使用しないコンテナは、--rm付けたらその場で削除できる）
+
+
+### Dockerfileについて知る
+#### Dockerfileとは？
+- 実務では、dockerfileから作る事が多い！
+- Dockerfileでは、「INSTRUCTION auguments」の形で記載される（FROM ubuntu:latestなど）
+
+#### Dockerfileを作ってみる
+```
+FROM ubuntu:latest
+RUN touch test
+```
+FROMで、元となるDockerイメージを指定
+RUNでLinuxコマンドを実行
