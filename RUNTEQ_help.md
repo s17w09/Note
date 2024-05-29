@@ -123,3 +123,5 @@ end
 テストが容易: フォームのバリデーションやロジックを個別にテストしやすくなる。
 これがRailsのForm Objectの基本的な使い方なんダナ。
 
+- [【初心者向け】丁寧すぎるRails『アソシエーション』チュートリアル【幾ら何でも】【完璧にわかる】](https://qiita.com/kazukimatsumoto/items/14bdff681ec5ddac26d1)
+- Rails基礎内容＋followfollowerの関係がわかる、わかりやすい記事
