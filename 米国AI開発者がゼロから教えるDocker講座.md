@@ -206,6 +206,7 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - docker run -d <image>：　-dがdetachedのこと。コンテナ起動後に、detach（バックグラウンドで動作）する
 - docker run --rm <image>：　コンテナをexit後に削除すること（1回しか使用しないコンテナは、--rm付けたらその場で削除できる）
 
+- 1回のみの単発コンテナとは？　：　データベースのバックアップ、ログの解析、データの変換などの一時的なタスクや，CI/CDパイプライン内でのテストの実行やビルドのための一時的な環境構築、ソフトウェアのデモを行うための一時的なコンテナだったりと，あらゆる場面で使用する可能性がある
 
 ### Dockerfileについて知る
 #### Dockerfileとは？
@@ -219,3 +220,10 @@ RUN touch test
 ```
 FROMで、元となるDockerイメージを指定
 RUNでLinuxコマンドを実行
+
+
+#### Dockerfileをbuildし、Docker imageを作る
+- dockerfileからdockerimageを作る場合には、docker buildコマンドを使用
+- docker build <directory>で、作成するが、基本的にDockerfileがあるフォルダに移動してからこのコマンドを使用するので、docker build .(.はカレントディレクトリの意味)になる事が多い
+- ダングリングイメージ：　noneタグとは、同じイメージの中で、最新ではないイメージを指す。 このnoneタグは、「dangling image（ダングリングイメージ）」と呼ばれ、ぶら下がりの意味を持つ。
+  
