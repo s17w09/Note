@@ -221,9 +221,26 @@ RUN touch test
 FROMで、元となるDockerイメージを指定
 RUNでLinuxコマンドを実行
 
-
 #### Dockerfileをbuildし、Docker imageを作る
 - dockerfileからdockerimageを作る場合には、docker buildコマンドを使用
 - docker build <directory>で、作成するが、基本的にDockerfileがあるフォルダに移動してからこのコマンドを使用するので、docker build .(.はカレントディレクトリの意味)になる事が多い
 - ダングリングイメージ：　noneタグとは、同じイメージの中で、最新ではないイメージを指す。 このnoneタグは、「dangling image（ダングリングイメージ）」と呼ばれ、ぶら下がりの意味を持つ。
+
+#### ビルドしたDockerimage をrunする
+- dockerコンテナにファイルを追加して、docker imageを作成すると、作成者しかファイルを作ったことがわからない
+- dockerfile内に、touch testと、テストファイルを作成する旨を記載していれば、皆がテストファイルを作った事を理解できる
   
+
+### Dockerfileの書き方
+#### FROMに関して
+- FROMでは、ベースとなるイメージを作成する
+- FROMに指定するのは、OSでもdockerimageでもいい
+- ただし、他人が作成しdockerimageの場合、余計なものが入っている可能性が高い
+- FROMで始るaugumentsは、ubuntuの他にalpineというLinuxのOSが使用されることも多い（容量が小さいため）
+- FROMで始まるベースイメージの上に、RUNなどで実行したものがレイヤーとして重なっていくイメージになる
+
+
+#### RUNに関して
+- RUNを使うことで、実行したい事柄を実行できる。しかしRUNごとに、その分レイヤーも作成されてしまうので、
+  いかにレイヤーを少なくするかは重要
+- RUN echo 'hello world'> testで、テストファイルに'hello world'という文章が書き込まれる
