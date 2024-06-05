@@ -221,8 +221,8 @@ RUN touch test
 FROMで、元となるDockerイメージを指定
 RUNでLinuxコマンドを実行
 
-#### Dockerfileをbuildし、Docker imageを作る
-- dockerfileからdockerimageを作る場合には、docker buildコマンドを使用
+#### Dockerfileをbuildし、Dockerイメージを作る
+- dockerfileからdockerイメージを作る場合には、docker buildコマンドを使用
 - docker build <directory>で、作成するが、基本的にDockerfileがあるフォルダに移動してからこのコマンドを使用するので、docker build .(.はカレントディレクトリの意味)になる事が多い
 - ダングリングイメージ：　noneタグとは、同じイメージの中で、最新ではないイメージを指す。 このnoneタグは、「dangling image（ダングリングイメージ）」と呼ばれ、ぶら下がりの意味を持つ。
 
@@ -236,7 +236,7 @@ RUNでLinuxコマンドを実行
 - FROMでは、ベースとなるイメージを作成する
 - FROMに指定するのは、OSでもdockerimageでもいい
 - ただし、他人が作成しdockerimageの場合、余計なものが入っている可能性が高い
-- FROMで始るaugumentsは、ubuntuの他にalpineというLinuxのOSが使用されることも多い（容量が小さいため）
+- FROMで始るaugumentsは、ubuntuの他に「alpine」というLinuxのOSが使用されることも多い（容量が小さいため）
 - FROMで始まるベースイメージの上に、RUNなどで実行したものがレイヤーとして重なっていくイメージになる
 
 
@@ -244,3 +244,20 @@ RUNでLinuxコマンドを実行
 - RUNを使うことで、実行したい事柄を実行できる。しかしRUNごとに、その分レイヤーも作成されてしまうので、
   いかにレイヤーを少なくするかは重要
 - RUN echo 'hello world'> testで、テストファイルに'hello world'という文章が書き込まれる
+
+#### layer数を最小限にするために
+- Layarを作るaugumentsは、RUN,COPY,ADDの３つのみ。それ以外のコマンドもあるが、レイヤーは作られない
+- コマンドを&&(Linuxのコマンド)で繋げることによって、レイヤー層を一つに収めることができる
+- バックスラッシュ（\  option+¥）で改行をする
+- 業務では、RUNでパッケージをインストールしていく
+- ubuntuでは、apt-get(またはapt)と言うコマンドでパッケージ管理をする
+
+#### cacheをうまく活用する
+- 実際の業務では、どのパッケージを使用するか最初からわかっていることは少ない
+-> casheを利用して、dockerfileを効率的に作成し、buildしていく
+- RUNで必要なパッケージをインストールし、そこに他に必要なパッケージを追記していく形だと、buildするごとに毎回
+  パッケージがインストールされ直しされてしまう
+- 必要とわかっているパッケージはRUNで一度build完了したら、その記憶をcasheとして利用する
+- 今後必要でまだbuildしていないパッケージを、RUNで新たにbuildすることで、すでにbuildされているパッケージに関してはcacheを利用するので、導入し直す手間がなく時短になる
+- ①必要なパッケージインストール　②その他必要なパッケージを、RUNで区切ってインストール　③最後にLayer層を最小限にするために、&&で繋いでいく
+- 
