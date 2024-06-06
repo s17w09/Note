@@ -146,3 +146,20 @@ find(params[:id]): 既存のレコードをIDで検索。
 build(board_params): 新しいレコードを属性ハッシュで作成。
 だから、params[:id]とboard_paramsの書き方が異なるのは、findとbuildの使い方が異なるからなんダナ
 ```
+
+◉ルーティング
+#### [【Rails】ルート定義について（routes.rb）](https://www.task-notes.com/entry/20161010/1476090694)
+> resourceは単一のリソースであるため index アクションが無い事と、show, edit, delete で :id パラメータを要求しない
+
+> _pathヘルパーの場合は相対パスを返すのに対して、_urlヘルパーは絶対URLを返します。/users/:idの GET メソッドであれば以下の通りです。
+```
+user_path(@user)  # /users/1
+user_url(@user)  # http://localhost:3000/users/1
+```
+- [単一のリソース](https://www.notion.so/dab5c21ef2c84304b06801a82c2a1960?pvs=4)
+- [collection, memberルーティング](https://www.notion.so/collection-382eb6cd1c25497b9dc82acefe65eb85?pvs=4)
+- [namespaceルーティング](https://www.notion.so/namespace-72de32fcc98d4b9cb32474a4c6d67f10?pvs=4)
+
+◉エラー処理
+#### [Railsアプリケーションにおけるエラー処理（例外処理）の考え方](https://qiita.com/jnchito/items/3ef95ea144ed15df3637)
+> わざとエラーを発生させること自体が難しい」というケースがよくある。そのような場合は自動化テスト + モックを使う。
