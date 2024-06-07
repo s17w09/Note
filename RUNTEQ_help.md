@@ -163,3 +163,16 @@ user_url(@user)  # http://localhost:3000/users/1
 ◉エラー処理
 #### [Railsアプリケーションにおけるエラー処理（例外処理）の考え方](https://qiita.com/jnchito/items/3ef95ea144ed15df3637)
 > わざとエラーを発生させること自体が難しい」というケースがよくある。そのような場合は自動化テスト + モックを使う。
+
+◉セキュリティ対策
+#### [](https://www.slideshare.net/slideshow/ruby-on-rails-security-142250872/142250872)
+- has_secure_passwordに関して
+https://railsguides.jp/security.html#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%A1%E7%90%86
+
+- railsでは基本的な脆弱性（SQLインジェクション、XSS、CSRF）はデフォルトで対応している、ガイドやチュートリアル通りにその他も対応することで安全性を高められる（自分で弄らないこと）
+
+#### [Railsのセキュリティ対策で調べた事](https://qiita.com/sutetotanuki/items/5eda6bbb5532dd64529a)
+- Privilege Escalation : ログインユーザーによりアクセスできる権限が設定されているリソースで、Model.find(params[:id])のみで取得してしまうと、権限を超えてアクセスされる可能性がある。
+-> current.userに絞って、Model.findすること
+
+- SQLインジェクション対策には、placefolder必須
