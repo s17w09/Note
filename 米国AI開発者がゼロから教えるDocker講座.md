@@ -276,4 +276,19 @@ RUNでLinuxコマンドを実行
 
 #### まとめ
 - FROMで指定するdockerimageは、必要最低限のものを選ぶ。ここが大きすぎると、いくらRUN以降を小さくしても、Dockerイメージが大きくなってしまい、支障をきたす恐れがある
-- 
+
+
+### Docker buildの詳細と、その他のInstruction
+#### docker builsは何をしているのか？
+- 「docker build .」　でカレントディレクトリを指定していたのは、ビルドする際にフォルダごとビルドする必要があるから
+-> ホストにあるフォルダ、まだその中にあるdockerfileが、dockerへコピーされるイメージ
+
+#### Docker demonとは？
+- dockerCLIで、docker demonに指示を出し、コンテナやイメージを操作している
+- dockerCLIはbuildやpull、runなど。
+- 直接私たちがdocker demonを操作する機会はなかなかないが、docker buildでdocker demonに指示を出していたことは記憶しておく
+
+#### Docker contextとは？
+- dockerfileが格納されているフォルダのことを、docker contextと呼ぶ
+- buildに使わないファイルは、build contextには入れないようにする（docker demonへコピーされる際の容量が大きくなりすぎるため）
+- 仮にdocker contextにdockerfile以外に、fileが格納されている場合には、ADDやCOPYでdockerfileに追記することで、ファイルをdocker imageに持っていくことができる
