@@ -176,3 +176,15 @@ https://railsguides.jp/security.html#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%
 -> current.userに絞って、Model.findすること
 
 - SQLインジェクション対策には、placefolder必須
+
+#### [Webセキュリティの基本を徳丸本とRailsから学ぶ](https://qiita.com/suzu-4/items/dd1e5919fddcef628901)
+- XSS対策：　入力をフィルタし、出力をエスケープする
+- SQLインジェクション対策：　プレースフォルダー使用
+- CSRF対策：　GETとPOSTを適切に使用する、意図したリクエストであることを確認するために、GET以外のリクエストに対してセキュリティトークンを追加する
+
+◉テスト
+#### [Rails チュートリアル　【初心者向け】　テストを10分でおさらいしよう！　](https://qiita.com/duka/items/2d724ea2226984cb544f)
+-　テストは基本的に３つに分けられる
+単体テスト、機能テスト、統合テスト
+
+#### [Railsのテスト実行時間を1/3まで短縮した話 (Rspec + CircleCI)](https://medium.com/@r.shimma/improve-rspec-tests-on-circleci-441e78c1796c)
