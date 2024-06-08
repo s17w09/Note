@@ -292,3 +292,21 @@ RUNでLinuxコマンドを実行
 - dockerfileが格納されているフォルダのことを、docker contextと呼ぶ
 - buildに使わないファイルは、build contextには入れないようにする（docker demonへコピーされる際の容量が大きくなりすぎるため）
 - 仮にdocker contextにdockerfile以外に、fileが格納されている場合には、ADDやCOPYでdockerfileに追記することで、ファイルをdocker imageに持っていくことができる
+
+#### COPY
+- HostにあるDockerfile以外のファイルを、コンテナにも持ってくるためには、DockerfileにCOPYで記載する必要がある
+- COPYもレイヤーを作る
+- COPY something/new_dir/のように、COPY<scr：　ファイル名><dest：どこに配置するのか>の形で記載
+
+#### COPY vs ADD
+- 単純にファイルやフォルダをコピーする場合には、COPYを使用する
+- tarの圧縮ファイルをコピーして解凍したい時は、ADDを使用する
+- Rails基礎も応用も、COPYのみ使用していた
+- ADDを使用すると、Hostにあるtarファイルを、コンテナに解凍して持っていける
+->ファイルサイズが大きく、COPYでも移動できるが時間がかかりすぎてしまう可能性がある時にADDを使用する
+
+#### Dockerfileがbuild contextにない場合
+- 必ずしもbuild context内に、Dockerfileが常に存在するわけではない
+- build　context内にない場合には、docker build -f <dockerfilename><build context>
+という形で、docker buildする際のコマンドが変わる
+- Dockerfileが開発用とテスト用に分かれている場合などは、ビルドコンテクスト外にあることも多い
