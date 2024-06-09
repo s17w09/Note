@@ -188,3 +188,27 @@ https://railsguides.jp/security.html#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%
 単体テスト、機能テスト、統合テスト
 
 #### [Railsのテスト実行時間を1/3まで短縮した話 (Rspec + CircleCI)](https://medium.com/@r.shimma/improve-rspec-tests-on-circleci-441e78c1796c)
+- Bootsnap 導入 (4分削減〜)、Rails 5.2 より Gemfile に標準導入された gem
+
+#### [Eightの品質を保ち続ける「Rails × RSpec × AWS」なローカル & CI環境](https://buildersbox.corp-sansan.com/entry/2020/04/13/110026)
+> ローカル環境やテスト環境を整備しないと、品質の低下、開発生産性の低下、事故リスクの増加 につながってきます。
+
+- CI環境：　継続的インテグレーション
+コードが共有リポジトリ（マスターブランチ）にマージされる前にビルドとテストが自動的に実行されること。
+また、継続的インテグレーションを実現する流れを CI/CDパイプラインと呼ぶ。
+https://circleci.com/ja/continuous-integration/
+
+◉デバッグ
+#### [[初心者向け] Ruby on Rails デバッグ方法まとめ](https://qiita.com/nishina555/items/e5886339d381db61b412)
+> 自分のコードに問題がなさそうなのであればgemのバグを踏んでしまった可能性もある。その場合は、エラーに関係していそうな怪しいgemの見当をつけてgithubで検索し、issueがあがってないか確認する。併せて、Readmeやwikiも確認するとよい。
+
+```
+デバッグの心構え
+- やみくもにデバッグしない。
+まずは仮説を立ててから検証を行う。
+「仮説->検証」のサイクルを繰り返すことで徐々に原因を絞り込んでいく。
+- 時間を区切る
+例えば30分なら30分と決めて、無理だったら誰かに聞く。誰かに聞くと一瞬で解決するケースがよくある。
+```
+
+◉デプロイ
