@@ -310,3 +310,38 @@ RUNでLinuxコマンドを実行
 - build　context内にない場合には、docker build -f <dockerfilename><build context>
 という形で、docker buildする際のコマンドが変わる
 - Dockerfileが開発用とテスト用に分かれている場合などは、ビルドコンテクスト外にあることも多い
+
+#### CMD VS ENTRYPOINT
+- ENTRYPOINTは、runの時に上書きできない（CMDは、docker run <image> pwdなどの形で上書きできる）
+- ENTRYPOINTがある場合は、CMD["params1", "params2", ...]の形をとる。ENTRYPOINTに引数を書けるわけではないので。（例：　ENTRYPOINT ["ls"]  CMD["--help"]）
+- ENTRYPOINTの場合、runで上書きできるのは引数を指定したCMDの部分のみ
+- 外部の人がDockerを使う場合など、上書きされたくない時にENTRYPOINTを使用するが基本的にはCMDでも問題ない
+（ENTRYPOINTも一応上書きできるようだが、上級者向けの内容になるので割愛）
+
+#### ENV
+- 環境変数を設定するインストラクション
+- ENV <key> <value> や ENV<key>=<value>など、書き方は色々ある
+- Rails応用は下記の記載の仕方。
+>ENV LANG C.UTF-8
+>ENV TZ Asia/Tokyo
+- ターミナルで環境変数を確認する場合は、$envで確認できる
+
+#### WORKDIR
+- Docker Instructionの実行ディレクトリを変更できる
+- RUNは、すべてroot直下で行われる
+- そのため、仮にRUN cd sample_folderなどとしてても、root直下のまま（&&で繋いでいれば、cdでsample_folderへ移動する）
+- ただ、&&で繋いだとしてもcd sample_folderはバグの元になるので、WORKDIR /sample_folderで、実行場所を変更する
+- WORKDIRでは絶対パスを指定する
+- WORKDIRで指定した絶対パス以降は、そのフォルダ直下でコマンドが実行されることになる
+
+- 下記はRails応用のDockerfileの一部。WORKDIR /v3_advanced_railsを指定しているので、それ以降のコマンドはすべて、/v3_advanced_railsで実行されている！！！
+```
+WORKDIR /v3_advanced_rails
+RUN gem install bundler:2.3.17
+COPY Gemfile /v3_advanced_rails/Gemfile
+COPY Gemfile.lock /v3_advanced_rails/Gemfile.lock
+COPY yarn.lock /v3_advanced_rails/yarn.lock
+RUN bundle install
+RUN yarn install
+COPY . /v3_advanced_rails
+```
