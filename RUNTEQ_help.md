@@ -212,3 +212,7 @@ https://circleci.com/ja/continuous-integration/
 ```
 
 ◉デプロイ
+#### [capistranoとは？からインストール、自動デプロイまで(rails)](https://qiita.com/gyu_outputs/items/a8d225dd0716ae54bcf1)
+> この一連のデプロイ作業を自動化させる、様々のツールの一つにcapistranoがあります。capistranoを利用することでサーバーにログインしなくても""　コマンド一つで　””デプロイできちゃうのですから、非常に楽です。一度Capistranoにデプロイが成功すれば、簡略してエラーなしにデプロイができます。
+
+#### [独学向けRailsアプリをAWSにデプロイする方法まとめ【入門】](https://qiita.com/gyu_outputs/items/b123ef229842d857ff39)
