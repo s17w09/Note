@@ -216,3 +216,13 @@ https://circleci.com/ja/continuous-integration/
 > この一連のデプロイ作業を自動化させる、様々のツールの一つにcapistranoがあります。capistranoを利用することでサーバーにログインしなくても""　コマンド一つで　””デプロイできちゃうのですから、非常に楽です。一度Capistranoにデプロイが成功すれば、簡略してエラーなしにデプロイができます。
 
 #### [独学向けRailsアプリをAWSにデプロイする方法まとめ【入門】](https://qiita.com/gyu_outputs/items/b123ef229842d857ff39)
+- パーミッションの見方、capistranoに関して記載あり
+
+#### [なぜrailsの本番環境ではUnicorn,Nginxを使うのか? 　~ Rack,Unicorn,Nginxの連携について ~【Ruby On Railsでwebサービス運営】](https://qiita.com/fritz22/items/fcb81753eaf381b4b33c)
+- ほとんど理解できなかった
+
+
+◉開発環境
+#### [VSCodeの拡張機能でRailsと仲良くなる
+](https://qiita.com/hakshu/items/98ed12c32da97474b68d)
+- 入ってないやつ導入した
