@@ -223,6 +223,17 @@ https://circleci.com/ja/continuous-integration/
 
 
 ◉開発環境
-#### [VSCodeの拡張機能でRailsと仲良くなる
-](https://qiita.com/hakshu/items/98ed12c32da97474b68d)
+#### [VSCodeの拡張機能でRailsと仲良くなる](https://qiita.com/hakshu/items/98ed12c32da97474b68d)
 - 入ってないやつ導入した
+
+#### [VSCodeでRuby On Railsを快適に書きたい](https://qiita.com/sensuikan1973/items/219a843e4654e6c2e10d)
+- 入ってないやつ導入した
+> Rails Go to Spec: Cmd + Shift + Y で spec ファイルと行き来できてかなり便利！
+> Rails Run Specs: 開いているspecファイルや直近のテストをパッと実行できる。直近のを即再実行できるの大事。
+
+#### [Rubyプログラミングが快適になるVim環境を0から構築する](https://qiita.com/mogulla3/items/42a7f6c73fa4a90b1df3)
+- 未読
+
+◉オープンソースプロダクト
+#### [著名なオープンソースRailsアプリのapp/以下を見る](https://zenn.dev/takahashim/articles/ac725fb16ec7a11809c5)
+- 自分で検索して見つけてきたやつ
