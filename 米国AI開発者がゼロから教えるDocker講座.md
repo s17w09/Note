@@ -362,3 +362,19 @@ COPY . /v3_advanced_rails
 ＝　ホストとコンテナのアクセス権限を共有することができる
 - $id -uでユーザーiD, $id -gでグループIDがわかる
 - [パーミッション見方早見表](https://qiita.com/gs1068/items/b7d9c7ec1de917bd8ad9)
+
+#### -pオプション
+- -p<host_port><container_port>で、ホストのポートをコンテナのポートに繋げる
+- IPアドレスは建物、ポートはその建物の部屋番号のようなもの
+- host_portとcontainer_portは違くても繋げられる、コンテナのポートはデフォルトで設定されているので変更するには手順を踏む必要はある
+- -pオプションは、よく使うので覚えておくこと
+
+#### コンテナで使えるコンピュータリソースの上限を設定する
+- docker inspect <container>で、CPU, memoryなどが一覧でずらっと表示される
+- 特定のものを見たい時は、docker inspect <container> | grep -i cpu　で、CPUのみ表示することができる
+- docker run --it --rm --cpus 4 --memory 2g ubuntu bashなど、--cpus 4 --memory 2g でコンテナがアクセスできる上限のCPUを設定することができる
+
+- [Hyper Threding](https://www.fmworld.net/biz/fmv/support/fmvmanual/0504-0509/5551d/s_kinou6.html#:~:text=%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%BB%E3%82%B9%E3%83%AC%E3%83%83%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%BB%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E6%A9%9F%E8%83%BD%E3%81%A8,%E8%A1%8C%E3%81%86%E3%81%93%E3%81%A8%E3%81%8C%E5%8F%AF%E8%83%BD%E3%81%A7%E3%81%99%E3%80%82)
+> ハイパー・スレッディング・テクノロジ機能とは、OS上で物理的な1つのCPU を仮想的に2つのCPU のように見せることにより、1つのCPU 内でプログラムの処理を同時に実行し、CPU の処理性能を向上させるテクノロジです。複数のソフトを同時に使っている場合でも、処理をスムーズに行うことが可能です。
+- 物理コア：　PC上に実際にあるコア数
+- 論理コア：　物理コアの中にある、pc上で見せかけることのできるコア数、物理コアの2倍になる
