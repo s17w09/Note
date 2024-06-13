@@ -237,3 +237,12 @@ https://circleci.com/ja/continuous-integration/
 ◉オープンソースプロダクト
 #### [著名なオープンソースRailsアプリのapp/以下を見る](https://zenn.dev/takahashim/articles/ac725fb16ec7a11809c5)
 - 自分で検索して見つけてきたやつ
+
+#### [gramantin/awesome-rails: A curated list of awesome things related to Ruby on Rails](https://github.com/gramantin/awesome-rails?tab=readme-ov-file)
+- RailsのOSプロダクトと、gemが一覧で載っている、便利
+
+#### [The Top 121 Ruby On Rails Open Source Projects](https://awesomeopensource.com/projects/ruby-on-rails)
+
+***
+
+### RailsのMVCのデータの流れ
