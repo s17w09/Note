@@ -245,4 +245,18 @@ https://circleci.com/ja/continuous-integration/
 
 ***
 
-### RailsのMVCのデータの流れ
+### [RailsのMVCのデータの流れ](https://school.runteq.jp/v2/mypage/helps/articles/request_response?gretel_word=%E8%A3%9C%E8%B6%B3%E3%83%BB%E4%BA%88%E5%82%99%E7%9F%A5%E8%AD%98)
+
+① ブラウザ（HTTPクライアント）からrailsサーバー（HTTPサーバー）に対して、HTTPリクエストを送信する
+> HTTPとは、HTTPサーバーとHTTPクライアント間の通信に用いられるプロトコルのことです。
+- プロトコル：　ネットワークに接続された聞き同士が通信する時の、あらかじめ決められた共通ルール・手順のことを指す
+
+> GETメソッドは、指定したリソースの表現をリクエストします。 GET を使用するリクエストは、データの取り込みに限ります。
+> POSTメソッドは指定したリソースに実体を送信するために使用するメソッドであり、サーバー上の状態を変更したり、副作用が発生したりすることがよくあります。(https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+
+-  Routing Error: コントローラーもしくはメソッドが存在しない場合に、このエラーが出る。
+> ユーザー一覧を取得するため、User.allのメソッドを使用します。※ allメソッドはクラスメソッドの一つで、クラスに対して使用することができます。
+>ActiveRecordのおかげでSQLを一字一句実行しなくても、User.allのように直感的にデータベースからデータを取得する処理が実行できると認識して下さい。
+> Railsはresourcesのルーティングに対応するControllerのアクションでは、指定がなければアクションと同名のテンプレートをrenderします。
+
+
