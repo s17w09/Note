@@ -404,3 +404,8 @@ COPY . /v3_advanced_rails
 - パスを通すこと　＝　環境変数$PATHにパスを追加することで、PCがプログラムをそのパスから探してきてくれる
 - echo $ PATHで今どこにパスが通っているのかを確認する
 - export PATH =/path/to/something:$PATHでPATHを追加する
+
+#### まとめ
+- Dockerfileに書くことで、バージョンが変わっても内容を書き換えるだけですむ。（コンテナに直接入れてしまっている場合は、削除して入れ直してという手間がかかる）
+- 最初からDockerfileに書く内容がわかる人はいない。コンテナに入って確認して、合っていたらDockerfileに書くという地道な作業を積み重ねていく
+- Dockerfileは基本的にroot直下で作業されてしまうので、root直下がまずい時はWORKDIRで導入先を変更すること（Anacondaはroot直下におけないので、/optにおくようWORKDIRを使う）
