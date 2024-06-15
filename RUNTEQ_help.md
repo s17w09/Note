@@ -260,3 +260,5 @@ https://circleci.com/ja/continuous-integration/
 > Railsはresourcesのルーティングに対応するControllerのアクションでは、指定がなければアクションと同名のテンプレートをrenderします。
 
 
+### [SinatraハンズオンでRailsを解剖する](https://school.runteq.jp/v2/mypage/helps/articles/sinatra_handson?gretel_word=%E8%A3%9C%E8%B6%B3%E3%83%BB%E4%BA%88%E5%82%99%E7%9F%A5%E8%AD%98)
+> Sinatra（シナトラ）は、Rubyで作成されたオープンソースのWebアプリケーションフレームワークである。2007年に公開されたSinatraはMVCに基づかない設計で作成されており、小さく、柔軟性があるプログラミングが可能となるよう意識されている。
