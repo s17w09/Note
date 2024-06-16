@@ -409,3 +409,28 @@ COPY . /v3_advanced_rails
 - Dockerfileに書くことで、バージョンが変わっても内容を書き換えるだけですむ。（コンテナに直接入れてしまっている場合は、削除して入れ直してという手間がかかる）
 - 最初からDockerfileに書く内容がわかる人はいない。コンテナに入って確認して、合っていたらDockerfileに書くという地道な作業を積み重ねていく
 - Dockerfileは基本的にroot直下で作業されてしまうので、root直下がまずい時はWORKDIRで導入先を変更すること（Anacondaはroot直下におけないので、/optにおくようWORKDIRを使う）
+
+
+### 応用編第二弾：　AWsのにデータサイエンス環境を構築する
+#### AWSへの登録
+- **Iaas, Paas, Saas**
+[IaaS、PaaS、SaaS とは 概要や用途を5分で入門 | クラウドエース株式会社](https://cloud-ace.jp/column/detail01/)
+
+![スクリーンショット 2024-05-24 16.23.42.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/01aee07b-19c0-4c95-8b7d-6685b9e33803/0617959d-d5e0-41a8-aa56-27b30f321824/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-05-24_16.23.42.png)
+
+**IaaS（イァース）：インターネット上でインフラ・開発環境を提供**
+ex) AWSのEC2、S3
+
+**PaaS（パース）：アプリケーションを乗せるだけでサービスを作れるインフラ+実行環境のセット**
+ex) Heroku
+
+**SaaS（サァース）：インターネット上で利用できるアプリケーションやソフトウェア**
+ex) Gmail, Slack
+
+- AWS以外にも、DigitalOceanやGoogleCloudPlatformなどのクラウドサービスある
+> クラウドサービスは、インターネット経由でソフトウェアやインフラなどの各種機能を利用できるサービスです。低コストで導入・運用可能な点など複数のメリットを持つ（https://www.ntt.com/business/sdpf/knowledge/archive_76.html）
+
+#### AWSのインスタンスにSSHでアクセスする
+- chmod: change modeの略、パーミッションを変更するコマンド
+- chmod 777 <file> で権限を変えられる
+- 777は所有者、所有グループ、そのほかの人がなんでもできる状態
