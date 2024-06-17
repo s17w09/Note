@@ -262,3 +262,23 @@ https://circleci.com/ja/continuous-integration/
 
 ### [SinatraハンズオンでRailsを解剖する](https://school.runteq.jp/v2/mypage/helps/articles/sinatra_handson?gretel_word=%E8%A3%9C%E8%B6%B3%E3%83%BB%E4%BA%88%E5%82%99%E7%9F%A5%E8%AD%98)
 > Sinatra（シナトラ）は、Rubyで作成されたオープンソースのWebアプリケーションフレームワークである。2007年に公開されたSinatraはMVCに基づかない設計で作成されており、小さく、柔軟性があるプログラミングが可能となるよう意識されている。
+
+- 立ち上げは、ruby app.rb
+> Sinatra（シナトラ）は、Rubyで作成されたオープンソースのWebアプリケーションフレームワークである。2007年に公開されたSinatraはMVCに基づかない設計で作成されており、小さく、柔軟性があるプログラミングが可能となるよう意識されている。
+
+>ビューは、HTMLを生成するためのものなのね。あくまでもサーバ側のもの。 
+
+- 「view-source: localhost3000」で、htmlのソースを見れる
+> view-sourceは純粋なHTMLソースを確認するのに特化しているから、特定の場面で役立つ。（view-sourceはページロード時の元のHTMLを見れて、JavaScriptで変更を加える前の状態を確認したいときに便利）
+```
+<html>
+<head>
+</head>
+<body>
+<h1>link_toはaタグを出力する単なるメソッドです</h1>
+<a href=https://google.com>Google</a>
+</body>
+</html>
+```
+
+- 上記から、link_toは、<a>タグを出力するメソッだとわかる
