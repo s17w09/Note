@@ -434,3 +434,14 @@ ex) Gmail, Slack
 - chmod: change modeの略、パーミッションを変更するコマンド
 - chmod 777 <file> で権限を変えられる
 - 777は所有者、所有グループ、そのほかの人がなんでもできる状態
+
+#### AWSのインスタンスにDockerをセットアップする
+- 初期値では、ubuntuのユーザーはdockerに対してアクセス権限がない。そのため、sudoを毎回つけるか、
+"sudo password -a ubuntu docker"で、アクセス権限を付与する必要がある（このコマンドを実行した際には、再ログインする必要あり）
+
+#### DockerImageをAWSのインスタンスにアップロードする
+- ①Dockerレジストリを使う（DockerHubにプッシュして、AWS側にプルする）②DockerFileをそのまま送る(DockerFileの容量が大きくなりやすいので、時間かかる可能性はある)③DockerImageをtarにして送る（圧縮効果と、個人情報が含まれている場合にはセキュリティ面でも堅牢になる）
+
+#### SFTPを使ってファイルを転送する
+- SFTP= Secure File Transfer Protocol、ファイルを転送させる時に使うコマンド
+- SFTPを使ってクラウドサーバーにファイルを送ったり(=put)、ローカルに持ってきたり(=get)することはよくある
