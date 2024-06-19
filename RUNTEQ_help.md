@@ -282,3 +282,25 @@ https://circleci.com/ja/continuous-integration/
 ```
 
 - 上記から、link_toは、<a>タグを出力するメソッだとわかる
+
+7,レイアウトファイル作成（回答無し）
+```
+# app.rb
+require 'sinatra'
+require 'sinatra/reloader'
+
+get '/learn-layout' do
+  erb :learn_layout
+end
+```
+
+```
+#learn_layout.erb
+<html>
+<head>
+</head>
+<body>
+<h1>レイアウトのありがたみ</h1>
+</body>
+</html>
+```
