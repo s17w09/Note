@@ -445,3 +445,29 @@ ex) Gmail, Slack
 #### SFTPを使ってファイルを転送する
 - SFTP= Secure File Transfer Protocol、ファイルを転送させる時に使うコマンド
 - SFTPを使ってクラウドサーバーにファイルを送ったり(=put)、ローカルに持ってきたり(=get)することはよくある
+
+#### tarからDockerImageに戻す
+- Dockerimageからtarファイルへ：　docker save {image} > {tar_file}
+- tarファイルからDockerImageへ：　docker load < {tar_file}
+- tarファイルをしようする場面は、インターネットの接続がないときなど（DockerHub使う時、ビルドする時はインターネット必要）
+
+#### Dockerfileを転送する
+- df -hコマンドで、Dockerの使用量がわかる
+>「df」は、ディスクの空き領域（freeスペース）のサイズを集計して表示するコマンドです。
+```
+ % df -h
+Filesystem                                                Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1                                           460Gi    13Gi   359Gi     4%    394k  3.8G    0%   /
+devfs                                                    198Ki   198Ki     0Bi   100%     686     0  100%   /dev
+/dev/disk3s6                                             460Gi    20Ki   359Gi     1%       0  3.8G    0%   /System/Volumes/VM
+/dev/disk3s2                                             460Gi    11Gi   359Gi     3%    1.2k  3.8G    0%   /System/Volumes/Preboot
+/dev/disk3s4                                             460Gi   648Mi   359Gi     1%     278  3.8G    0%   /System/Volumes/Update
+/dev/disk1s2                                             500Mi   6.0Mi   480Mi     2%       1  4.9M    0%   /System/Volumes/xarts
+/dev/disk1s1                                             500Mi   6.1Mi   480Mi     2%      34  4.9M    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3                                             500Mi   2.8Mi   480Mi     1%      88  4.9M    0%   /System/Volumes/Hardware
+/dev/disk3s5                                             460Gi    74Gi   359Gi    18%    1.4M  3.8G    0%   /System/Volumes/Data
+map auto_home                                              0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+/dev/disk2s1                                             5.0Gi   1.7Gi   3.2Gi    35%      62   34M    0%   /System/Volumes/Update/SFR/mnt1
+/Users/sayamiwatanabe/Downloads/Visual Studio Code.app   460Gi    76Gi   368Gi    18%    1.4M  3.9G    0%   /private/var/folders/_h/b108rc397b5g77m7w9dq1q7w0000gn/T/AppTranslocation/16D220FC-87CB-4910-AAB2-56BC0AC4B48B
+/dev/disk3s1                                             460Gi    13Gi   359Gi     4%    404k  3.8G    0%   /System/Volumes/Update/mnt1
+```
