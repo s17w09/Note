@@ -380,7 +380,7 @@ COPY . /v3_advanced_rails
 - 論理コア：　物理コアの中にある、pc上で見せかけることのできるコア数、物理コアの2倍になる
 
 
-### 応用編
+### 応用編第一弾： Dockerでプロレベルのデータサイエンスの解析環境を構築する
 #### Jupyter Labとは？
 - ターミナルでデフォルトでPythonを使うのは、みづらい
 - その見づらさを解消したのが、Ipython（Jupyter Labの初期のプロダクト）
@@ -471,3 +471,10 @@ map auto_home                                              0Bi     0Bi     0Bi  
 /Users/sayamiwatanabe/Downloads/Visual Studio Code.app   460Gi    76Gi   368Gi    18%    1.4M  3.9G    0%   /private/var/folders/_h/b108rc397b5g77m7w9dq1q7w0000gn/T/AppTranslocation/16D220FC-87CB-4910-AAB2-56BC0AC4B48B
 /dev/disk3s1                                             460Gi    13Gi   359Gi     4%    404k  3.8G    0%   /System/Volumes/Update/mnt1
 ```
+
+
+#### コンテナのアクセス権限についての解説
+- AWSなどのクラウドサーバを使用するときは、アクセス権限などに注意する
+
+
+### 応用編第三弾： ディープランニングができる！GPU対応のデータサイエンス環境の構築
