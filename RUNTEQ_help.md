@@ -305,3 +305,16 @@ end
 </html>
 ```
 - get ~ doはそれぞれ異なるルートに対して処理を定義しているから、同じファイルに複数書いても問題ない.
+
+>action属性って大事だな。ここに指定されたURLに対してリクエストが飛ぶんだな
+>name属性って大事だな。サーバ側でリクエストを受け取る時にめちゃ大事になってくるんだな。
+```
+ <form class="article_search" id="article_search" action="/articles" accept-charset="UTF-8" method="get">
+    <label for="q_title">検索</label>
+    <input class="input input-bordered" type="search" name="q[title_cont]" id="q_title_cont" />
+    <input type="submit" name="commit" value="検索" class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" data-disable-with="検索" />
+    <p class="text-sm">※記事詳細を確認する場合には、ログインが必要です。</p>
+</form>  </div>
+```
+
+### 簡単なアルゴリズムを身につけよう
