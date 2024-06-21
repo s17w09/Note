@@ -317,4 +317,5 @@ end
 </form>  </div>
 ```
 
-### 簡単なアルゴリズムを身につけよう
+### 　[簡単なアルゴリズムを身につけよう](https://school.runteq.jp/v2/mypage/helps/articles/get_knowledge_for_algorithm?gretel_word=%E8%A3%9C%E8%B6%B3%E3%83%BB%E4%BA%88%E5%82%99%E7%9F%A5%E8%AD%98)
+- バブルソートに関して
