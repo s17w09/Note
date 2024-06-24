@@ -482,4 +482,12 @@ map auto_home                                              0Bi     0Bi     0Bi  
 - GPU：Graphics Processing Unitの略で、画像処理装置を意味する。
 - その名の通り、画像を描写するために必要な計算を処理するもの。
 
-#### AWSにGPUインスタンスを作成する
+#### 応用編第二弾（part1）：Docker composeを使って、超本格Webアプリ開発環境を構築する
+- containerの中は基本的に１つのサービスのみ
+-　フレームワーク：Webアプリを簡単に作れる仕組み、RailsはRubyのフレームワーク
+- Dockerfileを書くときは、エラーが出るたびに必要なパッケージを入れていく
+- Gemfileに必要なgemを書いていき、それをDockerfile上でコピーしていく
+
+#### Docker composeを使って楽をする
+- Docker compose を使うときは、docker runが長いとき、複数のコンテナが存在するとき
+- docker compose.ymlファイルに、コンテナの中身のサービスを書いていく
