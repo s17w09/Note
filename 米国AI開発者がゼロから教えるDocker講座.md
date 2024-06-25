@@ -491,3 +491,15 @@ map auto_home                                              0Bi     0Bi     0Bi  
 #### Docker composeを使って楽をする
 - Docker compose を使うときは、docker runが長いとき、複数のコンテナが存在するとき
 - docker compose.ymlファイルに、コンテナの中身のサービスを書いていく
+
+#### docker-compose.ymlの書き方
+- キーとバリューの組み合わせで書いていく
+- version: '3'というのは、ymlファイルのバージョン、基本３でOK
+- ports, volumesは複数してしてもOKなので、１つの場合でも複数形で書く
+- volumesで指定するのは相対パスであること（絶対パスだと、他の人と違う場所に置かれてしまう可能性があるため）
+- docker run -itのitは、tty: true、stdin_open: trueになる。stdin_openでコンテナの入り口を開放し、ttyで綺麗に出力するようにする
+
+#### Docker composeを使ってコンテナを起動する
+- docker compose upは、docker build+run。buildしていなければbuidからしてくれる
+- docker compose upした後に、Dockerfileを書き換えた場合は、docker compose up --buildしないと、再度buildしてくれない
+- docker-compose.ymlにdocker run -itの内容を指定しているので、コマンドが短くて済む
