@@ -9,3 +9,15 @@
 ### [サービス開発で使えるデザインtips](https://school.runteq.jp/v2/mypage/helps/articles/design_tips?gretel_word=Web%E3%82%A2%E3%83%97%E3%83%AA%E9%96%A2%E9%80%A3)
 
 #### [エンジニア向け デザイン基礎（社内勉強会の資料）](https://qiita.com/xrxoxcxox/items/01ae9d1515fdf794e1f5)
+- 情報の整理
+- 優先順位付では4位まではタイを作らない
+- 近接、整列、反復、強調
+
+#### [なぜエンジニアが作る画面はダサいのか…?「理由」と「対策」を徹底解説](https://qiita.com/mskmiki/items/544149987475719e417b)
+- グループでの優先付け、その中でも優先付し強弱をつける
+- いらないタグは使わない（名前など）
+- なくても伝わるものは削る
+
+#### [色彩センスのいらない配色講座](https://www.slideshare.net/slideshow/ss-9003317/9003317)
+- 色の3属性：色相、明度、彩度
+[![Image from Gyazo](https://i.gyazo.com/98073db5c2de82fb603a9ad07140c65f.png)](https://gyazo.com/98073db5c2de82fb603a9ad07140c65f)
