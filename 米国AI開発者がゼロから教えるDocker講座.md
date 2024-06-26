@@ -503,3 +503,11 @@ map auto_home                                              0Bi     0Bi     0Bi  
 - docker compose upは、docker build+run。buildしていなければbuidからしてくれる
 - docker compose upした後に、Dockerfileを書き換えた場合は、docker compose up --buildしないと、再度buildしてくれない
 - docker-compose.ymlにdocker run -itの内容を指定しているので、コマンドが短くて済む
+
+#### Railsのセットアップ
+- rails newすると、Gemfileが新しくなる。railsアプリ作成に必要な情報がGemfileに入る
+
+#### docker-compose.ymlにDB部分を追記する
+- depends_on: - dbで、webとDBを繋いでいる
+- volumeはデータを永続化できる場所、コンテナ破棄しても、これにマウントされているボリュームは残る
+  https://qiita.com/gounx2/items/23b0dc8b8b95cc629f32
