@@ -482,7 +482,7 @@ map auto_home                                              0Bi     0Bi     0Bi  
 - GPU：Graphics Processing Unitの略で、画像処理装置を意味する。
 - その名の通り、画像を描写するために必要な計算を処理するもの。
 
-#### 応用編第二弾（part1）：Docker composeを使って、超本格Webアプリ開発環境を構築する
+### 応用編第二弾（part1）：Docker composeを使って、超本格Webアプリ開発環境を構築する
 - containerの中は基本的に１つのサービスのみ
 -　フレームワーク：Webアプリを簡単に作れる仕組み、RailsはRubyのフレームワーク
 - Dockerfileを書くときは、エラーが出るたびに必要なパッケージを入れていく
@@ -511,3 +511,10 @@ map auto_home                                              0Bi     0Bi     0Bi  
 - depends_on: - dbで、webとDBを繋いでいる
 - volumeはデータを永続化できる場所、コンテナ破棄しても、これにマウントされているボリュームは残る
   https://qiita.com/gounx2/items/23b0dc8b8b95cc629f32
+
+#### RailsのWebアプリの作成
+- MacでDockerを使う際は、Linuxのバーチャルマシンを立ち上げていて、 docker volumeで作成されるパスはその中にある
+
+
+### 応用編第二弾（part2）：Dockerを使ったCICDパイプラインを構築する
+- CDCIパイプライン：テスト環境から本番環境までのデプロイを自動化すること
