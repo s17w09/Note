@@ -518,3 +518,16 @@ map auto_home                                              0Bi     0Bi     0Bi  
 
 ### 応用編第二弾（part2）：Dockerを使ったCICDパイプラインを構築する
 - CDCIパイプライン：テスト環境から本番環境までのデプロイを自動化すること
+
+#### Railsのテストを実行する
+- コンテナに入って、rails testを実行するとテストが実行される
+- テストファイルはapp>testに自動的に作成される
+
+#### TravisCIをセットアップする
+- travisCIをセットアップすると、pushした時に自動でテストが実行され、デプロイやmergeを実行してくれる
+- travisCI, circleCIが簡単、Jenkinsが有名ではある、GitHub Actionsもある
+
+#### .travis.ymlにテストの流れを書く
+- travisCIを使うために、.travis.ymlをファイル直下に作成
+- その中で、CIツールを使えるよう記載する＋docker-compose.ymlも一文追記する（ホストでない場所でDB使用のため）
+- .travis.yml内にdockerを使用する旨を記載、docker compose up --buildを記載することで、直接ファイル内に必要な情報を描かなくて済む（docker compose upで、必要な情報をdockerfileに取りに行っているため）
