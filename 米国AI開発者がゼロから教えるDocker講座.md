@@ -531,3 +531,10 @@ map auto_home                                              0Bi     0Bi     0Bi  
 - travisCIを使うために、.travis.ymlをファイル直下に作成
 - その中で、CIツールを使えるよう記載する＋docker-compose.ymlも一文追記する（ホストでない場所でDB使用のため）
 - .travis.yml内にdockerを使用する旨を記載、docker compose up --buildを記載することで、直接ファイル内に必要な情報を描かなくて済む（docker compose upで、必要な情報をdockerfileに取りに行っているため）
+
+#### TravisCIのビルドを実行する
+- ローカルでpushしたら、.travis.ymlを参照してテストを実行してくれる
+
+#### Herokuに登録する
+- 元はRuby専用のデプロイ先だった
+- 2010年にSalesforceが買収しているので、Salesforceの１商品がHerokuになる
