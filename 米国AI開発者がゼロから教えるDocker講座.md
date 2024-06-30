@@ -542,3 +542,10 @@ map auto_home                                              0Bi     0Bi     0Bi  
 #### travis.ymlにHerokuへのデプロイを記述する
 - Dockerfileは開発環境と本番環境で分けることが多い（本番環境のみで必要なコードや、削ぎ落とすことがあるため）
   
+#### GitとCICDを使った実際の開発フローを体験する
+- 問題があっても、masterへのmergeは実行される。通常PF作成時点でテストが通っていれば、masterのmergeでbuildが失敗することはない
+
+#### まとめ
+- CIツール：テストやデプロイを自動化する
+- Flask(フラスク)：Python製のマイクロWebフレームワーク（軽量で必要最低限の機能を取り揃えたもの）
+- [オンラインコミュニティ](https://datawokagaku.com/community/)
