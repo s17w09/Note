@@ -538,3 +538,7 @@ map auto_home                                              0Bi     0Bi     0Bi  
 #### Herokuに登録する
 - 元はRuby専用のデプロイ先だった
 - 2010年にSalesforceが買収しているので、Salesforceの１商品がHerokuになる
+
+#### travis.ymlにHerokuへのデプロイを記述する
+- Dockerfileは開発環境と本番環境で分けることが多い（本番環境のみで必要なコードや、削ぎ落とすことがあるため）
+  
