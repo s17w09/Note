@@ -166,6 +166,7 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - docker image: コンテナを作る元のもの
 - docker ps -a : process statusの略、コンテナの一覧を表示できる
 
+[![Image from Gyazo](https://i.gyazo.com/2c867fc859769aff572d6bc40090f491.png)](https://gyazo.com/2c867fc859769aff572d6bc40090f491)
 
 
 ### Dockerの動きをもう少し詳細に理解する
