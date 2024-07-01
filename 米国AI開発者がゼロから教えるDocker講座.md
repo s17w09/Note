@@ -162,7 +162,7 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - docker rmi イメージ名：　ローカルに存在しているdocker imageを削除できる。rmではなくrmiになる
   
 #### まとめ
-- DockerHub：　dockerレジストリの一つ。dockerイメージをイメージを保管している場所
+- DockerHub：　dockerレジストリの一つ。dockerイメージを保管している場所
 - docker image: コンテナを作る元のもの
 - docker ps -a : process statusの略、コンテナの一覧を表示できる
 
