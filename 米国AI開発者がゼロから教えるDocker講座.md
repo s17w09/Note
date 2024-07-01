@@ -124,7 +124,7 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 
 #### UbuntuのDockerImageをrunする
 - Ubuntu :Linuxから派生したOS
-- docker run it ubuntu bash：　it→bash起動時に必要なイプション
+- docker run it ubuntu bash：　it→bash起動時に必要なオプション
 - bash→コンテナ起動時に実行するプログラム
 - ubuntuがなければ、ホストからとってくる
 - docker run it ubuntu bashで、ubuntuで作成されたコンテナ内で使用できるbashにアクセスしている
@@ -136,7 +136,7 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - docker run it ubuntu bashとすると、ubuntuの中のbashをデフォルトで実行してねと言う意味になる
 - 開発現場では、ubuntuをそのまま更新するよりは、新しいパッケージ等（JavaやPythonなど）を追加して更新することが多い
 
-#### コンテナをresetwして再度コンテナを起動する
+#### コンテナをresetして再度コンテナを起動する
 - exitとdetachの違い
 - exitした場合は、up=>exitedに変更している。再起動する場合は、restart選択、その後upとなる
 - detachの場合は、最初からupステータス。再起動したい場合は、docker attachを入力する
