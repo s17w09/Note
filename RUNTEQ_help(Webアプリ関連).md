@@ -127,3 +127,11 @@
 
 #### [【初学者向け】RailsでのWebアプリ作成Tips デザイン編](https://zenn.dev/eic/articles/bc34ceb9ebb429)
 - わかりやすい
+
+#### [デザインのチェックリスト](https://www.checklist.design/)
+- ページに必要なデザインのチェックリストが載っていて、わかりやすい
+
+### まとめ系おすすめサイト
+#### [コリス](https://coliss.com/)
+#### [Web Design Trends【ウェブデザイントレンド】- Webに関わるすべての人のためのメディア](https://webdesign-trends.net/)
+#### [Pulp Note](https://pulpxstyle.com/)
