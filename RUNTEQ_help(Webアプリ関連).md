@@ -135,3 +135,7 @@
 #### [コリス](https://coliss.com/)
 #### [Web Design Trends【ウェブデザイントレンド】- Webに関わるすべての人のためのメディア](https://webdesign-trends.net/)
 #### [Pulp Note](https://pulpxstyle.com/)
+
+#### [Webアプリ開発でのデザインポイント](https://school.runteq.jp/v2/mypage/helps/articles/design_guideline?gretel_word=Web%E3%82%A2%E3%83%97%E3%83%AA%E9%96%A2%E9%80%A3)
+- [キーワードから配色を生成](https://colormagic.app/)
+- 色のコントラスト比を確認するのに便利　[Color-Contrast-Checker](https://lab.syncer.jp/Tool/Color-Contrast-Checker/#google_vignette)
