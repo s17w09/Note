@@ -152,7 +152,7 @@ CONTAINER ID   IMAGE                                  COMMAND                   
 - docker imagesコマンドで、image名とtag名がわかる
   
 #### DockerImageを別名で保存する
-- 別名で保存するコマンドはdcker tagコマンドになる
+- 別名で保存するコマンドはdocker tagコマンドになる
 - DockerHubではなく、会社が用意している先にファイルを保存する場合には、名前に注意して保存する
   
 #### DockerHuBにDockerImageをpushする
