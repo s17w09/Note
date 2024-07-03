@@ -412,7 +412,7 @@ COPY . /v3_advanced_rails
 - Dockerfileは基本的にroot直下で作業されてしまうので、root直下がまずい時はWORKDIRで導入先を変更すること（Anacondaはroot直下におけないので、/optにおくようWORKDIRを使う）
 
 
-### 応用編第二弾：　AWsのにデータサイエンス環境を構築する
+### 応用編第二弾：　AWSにデータサイエンス環境を構築する
 #### AWSへの登録
 - **Iaas, Paas, Saas**
 [IaaS、PaaS、SaaS とは 概要や用途を5分で入門 | クラウドエース株式会社](https://cloud-ace.jp/column/detail01/)
