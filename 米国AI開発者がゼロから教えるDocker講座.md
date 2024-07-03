@@ -417,7 +417,7 @@ COPY . /v3_advanced_rails
 - **Iaas, Paas, Saas**
 [IaaS、PaaS、SaaS とは 概要や用途を5分で入門 | クラウドエース株式会社](https://cloud-ace.jp/column/detail01/)
 
-![スクリーンショット 2024-05-24 16.23.42.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/01aee07b-19c0-4c95-8b7d-6685b9e33803/0617959d-d5e0-41a8-aa56-27b30f321824/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-05-24_16.23.42.png)
+**![スクリーンショット 2024-05-24 16.23.42.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/01aee07b-19c0-4c95-8b7d-6685b9e33803/0617959d-d5e0-41a8-aa56-27b30f321824/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-05-24_16.23.42.png)**
 
 **IaaS（イァース）：インターネット上でインフラ・開発環境を提供**
 ex) AWSのEC2、S3
