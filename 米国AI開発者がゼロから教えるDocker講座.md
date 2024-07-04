@@ -398,7 +398,7 @@ COPY . /v3_advanced_rails
 - ANACONDA：pythonで使うものが、一つにまとまっているインストーラー
 
 #### Dockerfileを書く
-- コンテナでインストールしてみて、インストールできたらその流れをDOckerfileに書いていく
+- コンテナでインストールしてみて、インストールできたらその流れをDockerfileに書いていく
 - 共有サーバー使用する時は、/optの下にAnacondaを入れることが多い
 
 #### Anacondaのインストール
