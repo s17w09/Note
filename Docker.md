@@ -1,44 +1,35 @@
-[**米国AI開発者がゼロから教えるDocker講座](https://www.udemy.com/course/aidocker/learn/lecture/20294617#content)のまとめから、学んだ要点**
+### [米国AI開発者がゼロから教えるDocker講座](https://www.udemy.com/course/aidocker/learn/lecture/20294617#content)のまとめから、学んだ要点
 
 - DockerはLinuxの技術を使用している
 - Linux：**コンピュータのオペレーティングシステム（OS）**
 - OS：**コンピュータのハードウェアとソフトウェアを管理し、ユーザーがコンピュータを操作できるようにする基本的なソフトウェア**
 - シェル：**ユーザーがコンピュータにコンドを入力して操作するためのインタェース。**
-
 **例）ファイルを作ったり、プログラムを実行したりする。**
-
-<aside>
-💡
 
 - ほんとはKernel（核）に命令出したいけど出せないので、Shell（殻）に命令出している
 - ターミナルはシェルではない、シェルを動かすアプリがターミナル
 - シェルがカーネルに命令出してくれている
-</aside>
 
 - 環境変数：パソコンが上手に動くために必要な情報を保存している「**名札がついた収納ボックス**」、秘匿情報を管理する
 
 ---
 
-### DockerHub：
+#### DockerHub：
 
 - Dockerイメージを管理するDockerレジストリ
 - Dockerイメージを誰かに渡して、コンテナの情報を共有する
 - Dockerhubにはいろんな人のDockerイメージあり、それを使ったり、逆に自分のイメージを共有することができる
 
-<aside>
-💡
-
 - Dockerのコンテナ：　Dockerイメージから作られている、逆でもつくれる（DockerコンテナからDockerイメージを作る）
 - Dockerイメージ：　Dockerファイルから作られる、Dockerファイルはただのテキストファイル
 - Dockerイメージから、複数のコンテナを作ることもできる
-</aside>
 
-• docker ps　-a ：　すべてのコンテナ一覧を見れる
+- docker ps　-a ：　すべてのコンテナ一覧を見れる
 
 - Docker imageは、複数のdockerレイヤーで構成されている
 - 新しいimageを作ってsaveする場合には、新しいレイヤーが作成される。既存のレイヤーは変わらない（スペース節約のため）
 
-![スクリーンショット 2024-07-03 7.44.54.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/01aee07b-19c0-4c95-8b7d-6685b9e33803/79a5e80c-7469-4ab1-a286-69745cbbac3f/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-07-03_7.44.54.png)
+[![Image from Gyazo](https://i.gyazo.com/ab21ce6017cc1fe75591a1b64f7c9779.png)](https://gyazo.com/ab21ce6017cc1fe75591a1b64f7c9779)
 
 - dockerfileをbuildし、docker imageを作る
 
@@ -49,9 +40,9 @@
 - i :ホストからコンテナへ入ることが可能　＝ -tのみだと、コンテナ内に入れない
 - t ：表示が綺麗になる　＝　-iのみだと、表示が乱雑になる
 
-### Dockerfileの書き方
+#### Dockerfileの書き方
 
-### FROMに関して
+#### FROMに関して
 
 - FROMでは、ベースとなるイメージを作成する
 - FROMに指定するのは、OSでもdockerimageでもいい
@@ -152,9 +143,9 @@
 
 - 相対パスは現在の場所に依存し、絶対パスは常に同じ場所を指すダナ。
 
-https://www.youtube.com/watch?v=B5tSZr_QqXw
+***
 
-22:54まで視聴
+[【Docker入門】初心者向け！Dockerの基本を学んでコンテナ型の仮想環境を作ろう！](https://www.youtube.com/watch?v=B5tSZr_QqXw)
 
 ### Dockerとは？
 
@@ -165,7 +156,7 @@ https://www.youtube.com/watch?v=B5tSZr_QqXw
 - 仮想環境：物理的に存在するの中に、あたかも別のパソコンが存在するかのような状況のこと（＝パソコンの中に擬似的なコンピュータを作成すること）
 - 物理的に使われているコンピュータをホストOS、擬似的なコンピュータのことをゲストOSという
 
-![スクリーンショット 2024-07-06 11.33.22.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/01aee07b-19c0-4c95-8b7d-6685b9e33803/37a37d9e-7b1d-4183-8654-7f76c4063be7/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-07-06_11.33.22.png)
+[![Image from Gyazo](https://i.gyazo.com/9706aaae80a5f324ef6789e0a6b4b2cb.png)](https://gyazo.com/9706aaae80a5f324ef6789e0a6b4b2cb)
 
 ### Dockerのメリット
 
@@ -188,7 +179,7 @@ https://www.youtube.com/watch?v=B5tSZr_QqXw
 - dockerコンテナを削除する場合は、docker stopで停止させてからdocker rmで削除
 - docekrコンテナを削除してもイメージは消えない。イメージも削除する場合は、docker rmiで削除することができる
 
-![スクリーンショット 2024-07-07 8.48.57.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/01aee07b-19c0-4c95-8b7d-6685b9e33803/796c5bb2-65b5-4bb4-8414-cab95e08ab34/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-07-07_8.48.57.png)
+[![Image from Gyazo](https://i.gyazo.com/48891215089bc5e84b188f390bdeffdb.png)](https://gyazo.com/48891215089bc5e84b188f390bdeffdb)
 
 - Dockerfileからイメージを作成して、コンテナを立てる
 - FROMに指定するのは、何も入っていない特定のOSのコンテナイメージにすることが多い
@@ -215,8 +206,8 @@ RUNとENTRYPOINTの違い
 
 - dockerfileからコンテナイメージを作成→docker build
 - ENTRYPOINTを実行し終えたら、-itなどついていなければコンテナが閉じてしまう
-
-https://www.youtube.com/watch?v=vPaPgD72Z8o&t=25s
+***
+[【初めてのDocker】コンテナってそもそも何なの？](https://www.youtube.com/watch?v=vPaPgD72Z8o&t=25s)
 
 - Dockerとは？：仮想化技術の中のコンテナ技術
 - 仮想化：実態のないものを、あたかも実在しているかのように表現する技術
