@@ -34,5 +34,87 @@ puts "ダブルクオート: Hello, #{name}" # 出力: ダブルクオート: He
 
 #### 3章 プログラムを制御する
 **比較演算子**
-
 [![Image from Gyazo](https://i.gyazo.com/caabd8c5eafa79b88ff5eeef85424af7.png)](https://gyazo.com/caabd8c5eafa79b88ff5eeef85424af7)
+
+**論理演算子**
+[![Image from Gyazo](https://i.gyazo.com/cf9f68182b967926cc3ca63768e47646.png)](https://gyazo.com/cf9f68182b967926cc3ca63768e47646)
+- &&演算子：　左右の値が両方ともtrueの場合に、trueを返す
+- 捉え方として左辺がtrueの場合は、右辺を返すことになる、というのと同義
+- ||演算子：　左右の値のどちらかがtrueの場合に、trueを返す
+- 捉え方として、左辺がfalseの場合は、右辺を返すことになる、というのと同義
+
+#### 4章 配列の基本
+- Rubyの配列は、異なるデータ型の要素を混在させることも可能
+
+```
+mixed_array = [1, "two", 3.0, [4, 5], {six: 6}]
+```
+
+- Rubyでは、負のインデックスを使って配列の最後から要素にアクセスすることもできる
+```
+fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+puts fruits[-1]
+puts fruits[-2]
+puts fruits[-3]
+
+=> elderberry, date, cherryの順で出力される
+```
+
+- <<メソッドを使って要素を追加する = pushと同じ動きをする（＝配列の末尾に要素を追加する）
+```
+fruits = ["apple", "banana"]
+fruits << "cherry"
+p fruits
+
+=> ["apple", "banana", "cherry"]
+
+```
+
+- unshiftメソッド：　配列の先頭に要素を追加する
+- insertメソッド：　指定したインデックスに要素を追加する
+
+```
+fruits = ["apple", "banana"]
+fruits.insert(1, "cherry")
+p fruits # ["apple", "cherry", "banana"]
+```
+
+[![Image from Gyazo](https://i.gyazo.com/d25ac0658e8e010bb38cd8e602c44dff.png)](https://gyazo.com/d25ac0658e8e010bb38cd8e602c44dff)
+
+- deleteメソッドを使うと、指定した要素を削除する
+```
+fruits = ["apple", "banana", "cherry", "banana"]
+fruits.delete("banana")
+p fruits # ["apple", "cherry"]
+```
+
+- delete_atメソッド：　指定したインデックスの要素を削除する
+```
+fruits = ["apple", "banana", "cherry"]
+fruits.delete_at(1)
+p fruits # ["apple", "cherry"]
+```
+
+[![Image from Gyazo](https://i.gyazo.com/b814c5fef2581cffa670e43f9d830d49.png)](https://gyazo.com/b814c5fef2581cffa670e43f9d830d49)
+
+- each_with_indexメソッド：　何回目の繰り返しかを示すインデックスを取得する。
+```
+fruits = ["apple", "banana", "cherry"]
+
+fruits.each_with_index do |fruit, index|
+  puts "#{index}: #{fruit}"
+end
+
+=> 0: apple
+1: banana
+2: cherry
+```
+
+- indexを使って要素を変更する
+```
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "avocado"
+p fruits
+
+=> ["apple", "avocado", "cherry"]
+```
