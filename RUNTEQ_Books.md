@@ -33,4 +33,6 @@ puts "ダブルクオート: Hello, #{name}" # 出力: ダブルクオート: He
 
 
 #### 3章 プログラムを制御する
+**比較演算子**
+
 [![Image from Gyazo](https://i.gyazo.com/caabd8c5eafa79b88ff5eeef85424af7.png)](https://gyazo.com/caabd8c5eafa79b88ff5eeef85424af7)
