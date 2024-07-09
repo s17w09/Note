@@ -224,9 +224,24 @@ RUNとENTRYPOINTの違い
 デメリット：　ホストOSのOSの部分を共通で利用するので、OSに依存する（コンテナ型）
 
 
-### [100+ Docker Concepts you Need to Know
+### [100+ Docker Concepts you Need to Know](https://www.youtube.com/watch?v=rIrNIzy6U_g)
 
-Fireship
-チャンネル登録者数 314万人
+### [Docker超入門講座 合併版 | ゼロから実践する4時間のフルコース](https://www.youtube.com/watch?v=lZD1MIHwMBY&list=PLs3eD4QT7ow6O5wyRRnRCvB7JMuq_D3-D&index=1)
+- Dockerとは？：　アプリを簡単に開発、デプロイできる仕組み
+- Dockerのメリット：　開発環境の構築が簡単、メンバー間での開発環境構築の統一、テスト環境や本番環境の統一
 
-](https://www.youtube.com/watch?v=rIrNIzy6U_g)
+#### Linuxコマンド
+- Linux：OS（コンピュータを動かすための基本ソフト）の一種。WebサービスではLinux上で開発するのが主流
+-> Dockerは開発環境を整えるもので、OS・ライブラリ・コード等を1つのパッケージにしたもの。Docker使用時もOSはLinuxを使っているから、Linux操作ができないと開発ができない
+- シェルは、Libuxのコマンドを受け取って結果を出力するためのソフトウェア。
+- コマンドを入力したら、シェルが命令を解釈してLinuxに伝え、Linuxがコマンド実行し、シェルがコマンドの実行結果をユーザーに伝える
+[![Image from Gyazo](https://i.gyazo.com/4a4ff383caf6a4721cdf9ffcace2f79c.png)](https://gyazo.com/4a4ff383caf6a4721cdf9ffcace2f79c)
+
+-> シェル：ユーザーとLinuxの仲介役の役割を果たしている。
+- ターミナルが入出力の画面で提供するアプリで、ターミナルの中でシェルが動いている！　　　ターミナル＝シェルではないので注意
+[![Image from Gyazo](https://i.gyazo.com/5579904aec6130bf5b12342281493d33.png)](https://gyazo.com/5579904aec6130bf5b12342281493d33
+
+- lessコマンド： catと同様でファイルの中身を見れるが、全画面で表示されるようになる。　qで画面終了できる
+- mvコマンド： ファイル名の変更。　mv　<元んpファイル名><新しいファイル名>
+
+47:40から再開
