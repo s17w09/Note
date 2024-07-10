@@ -118,3 +118,22 @@ p fruits
 
 => ["apple", "avocado", "cherry"]
 ```
+
+#### 5章 配列の基本
+- uniqメソッド：　配列の要素から重複を取り除いた新しい配列を作成することができる。その際、元の配列は変更されない。
+[![Image from Gyazo](https://i.gyazo.com/7ee5ac87d05b803ac7ed8ee6a3d0dfe1.png)](https://gyazo.com/7ee5ac87d05b803ac7ed8ee6a3d0dfe1)
+
+uniqメソッドを使用しないで解いた場合の回答：
+> numbersの要素を一つずつ取り出し、unique_numbersに取り出した要素が含まれていないかを確認しています。unique_numbersにnumberの値が含まれていない場合のみ、<<メソッドを使用してunique_numbersにnumberを追加しています。
+```
+numbers = [1, 2, 2, 3, 4, 4, 5, 5, 5]
+unique_numbers = []
+numbers.each do |number|
+  if !unique_numbers.include?(number)
+    unique_numbers << number
+  end
+end
+p numbers
+p unique_numbers
+```
+- sortメソッド：　配列の要素を昇順に並び替えることができる。元の配列は変更されず、新しい配列が作成される。
