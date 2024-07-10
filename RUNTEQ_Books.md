@@ -137,3 +137,55 @@ p numbers
 p unique_numbers
 ```
 - sortメソッド：　配列の要素を昇順に並び替えることができる。元の配列は変更されず、新しい配列が作成される。
+- length, sizeメソッド：要素数を取得するメソッド。
+
+#### 6章 Hashの基本
+- シンボルを使用すると、メモリの使用量が少なくなるため、シンボルを使用することが推奨されています。
+- 外部のサービスと連携する場合など、キーが文字列で返ってくる場合は、文字列でキーを指定して値を取得します。
+
+```
+hash1 = { name: "Alice", age: 30 }
+hash2 = { city: "Wonderland" }
+hash3 = { name: "Bob", age: 20 }
+
+merged_hash_with_conflict = hash1.merge(hash3)
+puts merged_hash_with_conflict
+```
+=> {:name=>"Bob", :age=>20}と表示される
+- hash1とhash3は、nameとageのキーが重複しているため、mergeメソッドを使用すると、mergeメソッドの引数で指定したhash3の値のBob, 20が優先されます。
+
+
+#### 7章 メソッドについて
+- メソッド：　プログラムの特定の機能を実行するためのコードの塊
+- メソッドを使うことで、同じ処理を繰り返し記述する手間を省くことができます。コードの重複を避け、プログラム全体の可読性とメンテナンス性が向上します。
+
+- デフォルト引数を使うことで、引数が渡されなかった場合に使用されるデフォルトの値を指定できます。
+
+- 可変長引数: 任意の数の引数をメソッドに渡すことができます。可変長引数はアスタリスク（*）を使って定義し、渡された引数は配列として扱われます。
+
+```
+def greet(*names)
+  names.each do |name|
+    puts "Hello, #{name}!"
+  end
+end
+
+greet("Alice", "Bob", "Carol")
+```
+=> Hello, Alice!
+Hello, Bob!
+Hello, Carol!と表示される
+
+- ※変数は変数名の最初の一文字によって、ローカル変数、インスタンス変数、クラス変数、グローバル変数などの区別がされます。
+- 変数名の最初の文字が小文字かアンダーバーから始まる変数はローカル変数と呼ばれます。
+```
+def greet
+  message = "Hello, Ruby!"
+  puts message
+end
+
+greet
+puts message
+```
+=> Hello, Ruby!
+chapter7/scope.rb:6:in `<main>': undefined local variable or method `message' for main:Object (NameError)
