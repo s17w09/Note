@@ -161,6 +161,16 @@ puts merged_hash_with_conflict
 
 - デフォルト引数を使うことで、引数が渡されなかった場合に使用されるデフォルトの値を指定できます。
 
+- シンプルな引数の場合は、括弧を省略して半角スペース区切りでメソッド名と引数を記述して呼び出すこともできます。
+```
+def greet(name)
+  puts "Hello, #{name}!"
+end
+
+greet("Alice")
+greet "Bob"
+```
+
 - 可変長引数: 任意の数の引数をメソッドに渡すことができます。可変長引数はアスタリスク（*）を使って定義し、渡された引数は配列として扱われます。
 
 ```
@@ -205,3 +215,80 @@ chapter7/scope.rb:6:in `<main>': undefined local variable or method `message' fo
 
 - 通常の変数はメソッドの中でのみ使用できるといったルールがありますが、インスタンス変数はクラスのインスタンスの中のメソッドであればどこからでも値を参照することができます。
 
+- インスタンスメソッドは、クラスのインスタンスによって呼び出されるメソッドです。インスタンス変数を操作したり、インスタンスごとに異なる動作を行うために使用されます。
+```
+class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def introduce_text
+    "私の名前は#{name}です。#{age}才です"
+  end
+end
+
+tarou = Person.new("太郎", "30")
+puts tarou.introduce_text
+
+hanako = Person.new("花子", "25")
+puts hanako.introduce_text
+
+=> 私の名前は太郎です。30才です
+私の名前は花子です。25才です
+```
+
+- クラスメソッドは、クラス自体に関連付けられたメソッドです。インスタンスからは呼び出すことができず、クラス自体から呼び出すことができます。
+- クラスメソッドを定義するときは、メソッド名の前にself.を付けます。
+```
+class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def introduce_text
+    "私の名前は#{name}です。#{age}才です"
+  end
+
+  def self.adulthood_age_text
+    "成人年齢は18才です"
+  end
+end
+
+puts Person.adulthood_age_text
+
+=> 成人年齢は18才です
+```
+
+- privateメソッドは、そのクラスの内部からのみ呼び出すことができるメソッドです。
+```
+class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def introduce_text
+    "私の名前は#{name}です。#{age}才です。私の秘密は#{secret}です。"
+  end
+  
+  private
+
+  def secret
+    '内緒'
+  end
+end
+  
+person = Person.new("太郎", 30)
+puts person.introduce_text
+=> 私の名前は太郎です。30才です。私の秘密は内緒です。
+```
+
+#### 9章 モジュールについて
