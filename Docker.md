@@ -282,4 +282,13 @@ itって何してるの？
 - Docker composeは複数のアプリケーションをまとめて操作できる、連携も簡単にやってくれる
 - docker.compose.ymlに書いていく
 
-1:46:11から再開
+- DOckerfileのRUN apt get, yarn, nodejsはJavascript関連のライブラリを入れている
+- rails newすると必要なファイルが自動的にインストールされる
+- Gemfileが新しくなったら、イメージをビルドしなおしする必要がある
+- depends_on: - dbで、webとDBを繋いでいる
+
+- docker compose down: コンテナの停止と削除をいっぺんに行なっている
+
+
+#### 本番公開
+1:59:21から再開
