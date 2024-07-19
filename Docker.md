@@ -301,4 +301,7 @@ itって何してるの？
 - CD ：継続的デリバリー、自動デプロイのこと。
 [![Image from Gyazo](https://i.gyazo.com/f673559defce2f9b48edb65e72707455.png)](https://gyazo.com/f673559defce2f9b48edb65e72707455)
 
-2:54:00
+- Git：　バージョン管理、コードの管理
+- GitHub：ソースコードを共有、Gitのコードの共有
+
+3:11:24
