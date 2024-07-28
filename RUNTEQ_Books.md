@@ -387,3 +387,5 @@ APIを介して、異なるソフトウェアアプリケーションがイン�
 
 - HTTPはTCP/IPを基盤にしています。TCPとIPは、インターネットを支える基本的なネットワークプロトコルです。
 - TCP （Transmission Control Protocol）/ IP（Internet Protocol）
+
+#### 2章 HTTP通信
